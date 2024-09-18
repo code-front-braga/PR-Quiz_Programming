@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Questrial&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./src/styles/styles.css">
+</head>
+
+<body>
+  <main>
+    <figure>
+      <img class="bg-main" src="./src/images/bg-main.png"
+        alt="Uma ilustração de um garoto sentado na cadeira usando o computador">
+      <!-- <img class="mask-image" src="" alt=""> -->
+    </figure>
+
+    <section>
+      <div class="text-content">
+        <h1>
+          QUIZ DA PROGRAMAÇÃO
+        </h1>
+        <br>
+        <h2>Escolha o tema, clicando no "+" e divirta-se estudando!</h2>
+      </div>
+
+      <div class="wrapper animate__animated animate__pulse animate__infinite	infinite">
+        <input type="checkbox" id="toogle" class="hidden-trigger" />
+        <label for="toogle" class="circle">
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48"
+            height="48" xml:space="preserve" version="1.1" viewBox="0 0 48 48">
+            <image width="48" height="48"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC">
+            </image>
+          </svg>
+        </label>
+
+        <div class="subs">
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub1" class="hidden-sub-trigger" />
+            <label for="sub1">Programação</label>
+          </button>
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub2" class="hidden-sub-trigger" />
+            <label for="sub2">Frameworks</label>
+          </button>
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub3" class="hidden-sub-trigger" />
+            <label for="sub3">Métodos JavaScript</label>
+          </button>
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub4" class="hidden-sub-trigger" />
+            <label for="sub4">Front End</label>
+          </button>
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub5" class="hidden-sub-trigger" />
+            <label for="sub5">Linguagem de Programação</label>
+          </button>
+          <button class="sub-circle">
+            <input value="1" name="sub-circle" type="checkbox" id="sub6" class="hidden-sub-trigger" />
+            <label for="sub6">Node.js</label>
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+
+  <script type="module" src="dist/js/index.js"></script>
+</body>
+
+</html>

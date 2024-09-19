@@ -213,3 +213,62 @@ export const programming = [
       'A programação imperativa descreve como realizar uma tarefa, enquanto a declarativa descreve o resultado desejado.',
   },
 ];
+
+export const nodejs = [
+  {
+    id: 'n-01',
+    question:
+      '1. Qual é a principal característica do Node.js que o diferencia de outros ambientes de execução JavaScript??',
+    answerOptions: [
+      'É executado apenas em navegadores web.',
+      'É baseado em eventos e não bloqueante.',
+      'É utilizado principalmente para desenvolvimento front-end.',
+      'Não suporta a criação de servidores web.',
+    ],
+    correctAnswer: 'É baseado em eventos e não bloqueante.',
+  },
+  {
+    id: 'n-02',
+    question: 'Qual é a função do módulo fs no Node.js?',
+    answerOptions: [
+      'Manipular o sistema de arquivos.',
+      'Criar interfaces gráficas.',
+      'Gerenciar pacotes.',
+      'Interagir com bancos de dados.',
+    ],
+    correctAnswer: 'Manipular o sistema de arquivos.',
+  },
+  {
+    id: 'n-03',
+    question: 'O que é um callback em Node.js?',
+    answerOptions: [
+      'Uma função que é executada após uma operação assíncrona ser concluída.',
+      'Um tipo de dado primitivo.',
+      'Uma estrutura de controle de fluxo síncrona.',
+      'Uma biblioteca para manipulação de eventos.',
+    ],
+    correctAnswer: 'Uma função que é executada após uma operação assíncrona ser concluída.',
+  },
+  {
+    id: 'n-04',
+    question: 'Qual é a principal vantagem de utilizar o Node.js para desenvolvimento de aplicações back-end?',
+    answerOptions: [
+      'É mais fácil de aprender que outras linguagens.',
+      'É a única linguagem que pode ser utilizada para desenvolvimento back-end.',
+      'Permite criar aplicações escaláveis e de alta performance.',
+      'Não requer configuração.',
+    ],
+    correctAnswer: 'Permite criar aplicações escaláveis e de alta performance.',
+  },
+  {
+    id: 'n-05',
+    question: 'Qual é a função do package.json em um projeto Node.js?',
+    answerOptions: [
+      'Armazenar o código fonte do projeto.',
+      'Gerenciar as dependências do projeto.',
+      'Configurar o servidor web.',
+      'Compilar o código JavaScript.',
+    ],
+    correctAnswer: 'Gerenciar as dependências do projeto.',
+  },
+];

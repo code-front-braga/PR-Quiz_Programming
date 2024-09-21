@@ -19,64 +19,68 @@
 </head>
 
 <body>
-  <main class="main-container">
-    <figure>
-      <img class="bg-main" src="./src/images/bg-main.png"
-        alt="Uma ilustração de um garoto sentado na cadeira usando o computador">
-      <!-- <img class="mask-image" src="" alt=""> -->
-    </figure>
+  <!-- <main class="main-container">
+    <div class="main-wrapper">
 
-    <section>
-      <div class="text-content">
-        <h1>
-          QUIZ DA PROGRAMAÇÃO
-        </h1>
-        <br>
-        <h2>Escolha o tema, clicando no "+" e divirta-se estudando!</h2>
-      </div>
-
-      <div class="wrapper animate__animated animate__pulse animate__infinite	infinite">
-        <input type="checkbox" id="toogle" class="hidden-trigger" />
-        <label for="toogle" class="circle">
-          <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48"
-            height="48" xml:space="preserve" version="1.1" viewBox="0 0 48 48">
-            <image width="48" height="48"
-              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC">
-            </image>
-          </svg>
-        </label>
-
-        <div class="subs">
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub1" class="hidden-sub-trigger programming-button" />
-            <label for="sub1">Programação</label>
-          </button>
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub2" class="hidden-sub-trigger frameworks-button" />
-            <label for="sub2">Frameworks</label>
-          </button>
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub3" class="hidden-sub-trigger js-methods-button" />
-            <label for="sub3">Métodos JavaScript</label>
-          </button>
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub4" class="hidden-sub-trigger frontend-button" />
-            <label for="sub4">Front End</label>
-          </button>
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub5" class="hidden-sub-trigger programming-language-button" />
-            <label for="sub5">Linguagem de Programação</label>
-          </button>
-          <button class="sub-circle">
-            <input value="1" name="sub-circle" type="checkbox" id="sub6" class="hidden-sub-trigger nodejs-button" />
-            <label for="sub6">Node.js</label>
-          </button>
+      <figure>
+        <img class="bg-main" src="./src/images/bg-main.png"
+          alt="Uma ilustração de um garoto sentado na cadeira usando o computador">
+      </figure>
+  
+      <section>
+        <div class="text-content">
+          <h1>
+            QUIZ DA PROGRAMAÇÃO
+          </h1>
+          <br>
+          <h2>Escolha o tema, clicando no "+" e divirta-se estudando!</h2>
         </div>
-      </div>
-    </section>
-  </main>
+  
+        <div class="wrapper animate__animated animate__pulse animate__infinite	infinite">
+          <input type="checkbox" id="toogle" class="hidden-trigger" />
+          <label for="toogle" class="circle">
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48"
+              height="48" xml:space="preserve" version="1.1" viewBox="0 0 48 48">
+              <image width="48" height="48"
+                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC">
+              </image>
+            </svg>
+          </label>
+  
+          <div class="subs">
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub1"
+                class="hidden-sub-trigger programming-button" />
+              <label class="programming" for="sub1">Programação</label>
+            </button>
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub2" class="hidden-sub-trigger frameworks-button" />
+              <label class="frameworks" for="sub2">Frameworks</label>
+            </button>
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub3" class="hidden-sub-trigger js-methods-button" />
+              <label class="js-methods" for="sub3">Métodos JavaScript</label>
+            </button>
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub4" class="hidden-sub-trigger frontend-button" />
+              <label class="front-end" for="sub4">Front End</label>
+            </button>
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub5"
+                class="hidden-sub-trigger programming-language-button" />
+              <label class="programming-language" for="sub5">Linguagem de Programação</label>
+            </button>
+            <button class="sub-circle">
+              <input value="1" name="sub-circle" type="checkbox" id="sub6" class="hidden-sub-trigger nodejs-button" />
+              <label class="nodejs" for="sub6">Node.js</label>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main> -->
 
-  <!-- <main class="quiz-container">
+  <!-- div class="quiz-container">
     <div class="fade"></div>
     <div class="guidelines-content-popup">
       <h2>Olá! Aqui vai algumas orientações:</h2>
@@ -91,7 +95,64 @@
       <span>Boa sorte!</span>
       <button class="ready-button">Estou pronto!</button>
     </div>
-  </main> -->
+  </div> -->
+
+  <main id="main-quiz">
+    <div class="main-quiz-wrapper">
+      <span class="timing-display">00 : 00 : 00</span>
+
+      <div class="quiz-content">
+        <h2 class="question">Qual linguagem de programação é conhecida por sua eficiência e é frequentemente utilizada
+          para o desenvolvimento de sistemas operacionais e jogos?</h2>
+        <div class="answer-options">
+          <div class="opt-1-container all-options">
+            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
+            <label for="opt-1">Um framework é utilizado </label>
+          </div>
+          <div class="opt-1-container all-options">
+            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
+            <label for="opt-1">Um framework é utilizado apenas para desenvolvimento back-end</label>
+          </div>
+          <div class="opt-1-container all-options">
+            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
+            <label for="opt-1">Um framework é utilizado apenas para desenvolvimento back-end, enquanto uma biblioteca é
+              utilizada apenas para front-end.</label>
+          </div>
+          <div class="opt-1-container all-options">
+            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
+            <label for="opt-1">Um framework </label>
+          </div>
+
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button class="back-button">
+          <div class="button-box">
+            <span class="button-elem">
+              <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                </path>
+              </svg>
+            </span>
+            <span class="button-elem">
+              <svg viewBox="0 0 46 40">
+                <path
+                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                </path>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <button class="next-question-button">
+          <span class="label">Próximo</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </main>
 
 
 

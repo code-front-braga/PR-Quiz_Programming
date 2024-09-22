@@ -18,16 +18,16 @@
   <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 
-<body>
-  <!-- <main class="main-container">
-    <div class="main-wrapper">
+<body class="d-flex">
+  <main id="main-home">
+    <div class="main-wrapper d-flex">
 
       <figure>
         <img class="bg-main" src="./src/images/bg-main.png"
           alt="Uma ilustração de um garoto sentado na cadeira usando o computador">
       </figure>
-  
-      <section>
+
+      <section class="section-home-content d-flex">
         <div class="text-content">
           <h1>
             QUIZ DA PROGRAMAÇÃO
@@ -35,8 +35,8 @@
           <br>
           <h2>Escolha o tema, clicando no "+" e divirta-se estudando!</h2>
         </div>
-  
-        <div class="wrapper animate__animated animate__pulse animate__infinite	infinite">
+
+        <div class="open-button-wrapper animate__animated animate__pulse animate__infinite">
           <input type="checkbox" id="toogle" class="hidden-trigger" />
           <label for="toogle" class="circle">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48"
@@ -46,7 +46,7 @@
               </image>
             </svg>
           </label>
-  
+
           <div class="subs">
             <button class="sub-circle">
               <input value="1" name="sub-circle" type="checkbox" id="sub1"
@@ -54,11 +54,13 @@
               <label class="programming" for="sub1">Programação</label>
             </button>
             <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub2" class="hidden-sub-trigger frameworks-button" />
+              <input value="1" name="sub-circle" type="checkbox" id="sub2"
+                class="hidden-sub-trigger frameworks-button" />
               <label class="frameworks" for="sub2">Frameworks</label>
             </button>
             <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub3" class="hidden-sub-trigger js-methods-button" />
+              <input value="1" name="sub-circle" type="checkbox" id="sub3"
+                class="hidden-sub-trigger js-methods-button" />
               <label class="js-methods" for="sub3">Métodos JavaScript</label>
             </button>
             <button class="sub-circle">
@@ -78,33 +80,21 @@
         </div>
       </section>
     </div>
-  </main> -->
+  </main>
 
-  <!-- div class="quiz-container">
+
+
+
+
+  <!-- <main id="main-quiz">
     <div class="fade"></div>
-    <div class="guidelines-content-popup">
-      <h2>Olá! Aqui vai algumas orientações:</h2>
-      <ul class="ul-guidelines">
-        <li>Esse quiz contém <span class="questions-quantity">5</span> questões.</li>
-        <li>Cada questão possui <span class="alternatives-quantity">5</span> alternativas e somente uma está correta.
-        </li>
-        <li>Cada acerto vale 20 pontos</li>
-        <li>Se você errar, perde 15 pontos</li>
-        <li>Você terá 40 segundos para finalizar o quiz</li>
-      </ul>
-      <span>Boa sorte!</span>
-      <button class="ready-button">Estou pronto!</button>
-    </div>
-  </div> -->
-
-  <main id="main-quiz">
-    <div class="main-quiz-wrapper">
+    <div class="main-quiz-wrapper d-flex">
       <span class="timing-display">00 : 00 : 00</span>
 
-      <div class="quiz-content">
+      <div class="quiz-content d-flex">
         <h2 class="question">Qual linguagem de programação é conhecida por sua eficiência e é frequentemente utilizada
           para o desenvolvimento de sistemas operacionais e jogos?</h2>
-        <div class="answer-options">
+        <div class="answer-options d-flex">
           <div class="opt-1-container all-options">
             <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
             <label for="opt-1">Um framework é utilizado </label>
@@ -125,7 +115,7 @@
 
         </div>
       </div>
-      <div class="buttons-container">
+      <div class="buttons-container d-flex">
         <button class="back-button">
           <div class="button-box">
             <span class="button-elem">
@@ -146,12 +136,30 @@
         </button>
         <button class="next-question-button">
           <span class="label">Próximo</span>
-          <span class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+          <span class="icon d-flex-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path fill="currentColor"
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+            </svg>
           </span>
         </button>
       </div>
-    </div>
+    </div> -->
+
+    <!-- <div class="guidelines-content-popup d-flex-center pos-absolute-center">
+      <h2>Olá! Aqui vai algumas orientações:</h2>
+      <ul class="ul-guidelines">
+        <li>Esse quiz contém <span class="questions-quantity">5</span> questões.</li>
+        <li>Cada questão possui <span class="alternatives-quantity">5</span> alternativas e somente uma está correta.
+        </li>
+        <li>Cada acerto vale 20 pontos</li>
+        <li>Se você errar, perde 15 pontos</li>
+        <li>Você terá 40 segundos para finalizar o quiz</li>
+      </ul>
+      <span>Boa sorte!</span>
+      <button class="ready-button">Estou pronto!</button>
+    </div> -->
   </main>
 
 

@@ -81,6 +81,8 @@ function displayOptions() {
 
     const divOptionsContainer = putCreatedElementsOnHtml(answer, index, correctAnswer, selectedAnswer);
     divContainer.appendChild(divOptionsContainer);
+
+    
   });
 }
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+
+  <link rel="stylesheet" href="./src/styles/styles.css">
+</head>
+
+<body>
+  <main id="main-quiz">
+    <!-- <div class="fade"></div> -->
+    <div class="main-quiz-wrapper d-flex">
+      <span class="timing-display">00 : 00 : 00</span>
+      <span class="question-number">QUESTÃO 01</span>
+
+      <div class="quiz-content d-flex">
+        <h2 class="question"></h2>
+        <div class="answer-options d-flex"></div>
+      </div>
+      <div class="buttons-container d-flex">
+        <button class="back-button">
+          <div class="button-box">
+            <span class="button-elem">
+              <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                </path>
+              </svg>
+            </span>
+            <span class="button-elem">
+              <svg viewBox="0 0 46 40">
+                <path
+                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                </path>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <button class="next-question-button">
+          <span class="label">Próximo</span>
+          <span class="icon d-flex-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path fill="currentColor"
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="guidelines-content-popup d-flex-center pos-absolute-center">
+      <h2>Olá! Aqui vai algumas orientações:</h2>
+      <ul class="ul-guidelines">
+        <li>Esse quiz contém <span class="questions-quantity">5</span> questões.</li>
+        <li>Cada questão possui <span class="alternatives-quantity">5</span> alternativas e somente uma está correta.
+        </li>
+        <li>Cada acerto vale 20 pontos</li>
+        <li>Se você errar, perde 15 pontos</li>
+        <li>Você terá 40 segundos para finalizar o quiz</li>
+      </ul>
+      <p class="important-info"><span>Atenção:</span> O contador iniciará assim que você apertar o botão abaixo!</p>
+      <span>Boa sorte!</span>
+      <button class="ready-button">Estou pronto!</button>
+    </div>
+  </main>
+
+  <script type="module" src="dist/js/quiz.js"></script>
+</body>
+
+</html>

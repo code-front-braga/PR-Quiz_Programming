@@ -41,7 +41,7 @@ body {
   align-items: center;
 }
 
-pos-absolute-center {
+.pos-absolute-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -97,6 +97,8 @@ figure img {
   flex-direction: column;
   gap: 14rem;
   padding: 2.4rem;
+
+  z-index: 4;
 }
 
 .text-content h1 {
@@ -282,12 +284,23 @@ figure img {
 
 .guidelines-content-popup {
   background: var(--white-color);
+  border-radius: 1rem;
   border: 0.2rem solid;
-  clip-path: polygon(8% 0, 91% 0, 100% 0, 99% 89%, 91% 100%, 0 99%, 0% 70%, 0 8%);
+  -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+  -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+  box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+  opacity: 0;
 
   flex-direction: column;
   gap: 4rem;
   padding: 2.4rem;
+
+  transition: 0.6s ease-in-out;
+  z-index: 3;
+}
+
+.guidelines-content-popup.show-guidelines {
+  opacity: 1;
 }
 
 .guidelines-content-popup h2 {
@@ -301,11 +314,24 @@ figure img {
   line-height: 3.2rem;
 }
 
+.important-info span {
+  font-weight: 700;
+  color: red;
+}
+
 .fade {
   background: #00000088;
 
   position: absolute;
   inset: 0;
+
+  opacity: 1;
+
+  z-index: 3;
+}
+
+.fade.show-fade {
+  opacity: 1;
 }
 
 .ready-button {
@@ -424,15 +450,23 @@ figure img {
   gap: 2rem;
   padding: 2.4rem;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 .timing-display {
   font-size: 4rem;
 }
 
+.question-number {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.6rem;
+}
+
 .quiz-content {
   text-align: center;
+
+  width: 100%;
 
   flex-direction: column;
   gap: 4.2rem;
@@ -445,15 +479,28 @@ figure img {
 }
 
 .all-options {
+  cursor: pointer;
+  border-bottom: 2px solid var(--secondary-color);
+
   display: flex;
   align-items: center;
   gap: 1.8rem;
+  padding: 0.6rem;
 
   text-align: justify;
 }
 
 .all-options label {
+  cursor: pointer;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 0.4rem;
+
   font-size: 1.8rem;
+
+  width: 100%;
+
+  padding: 1rem;
 }
 
 .checkbox {
@@ -463,7 +510,7 @@ figure img {
   border: 0.2rem solid var(--white-color);
   aspect-ratio: 1;
 
-  width: 3rem;
+  width: 4rem;
 
   position: relative;
 
@@ -474,11 +521,11 @@ figure img {
   content: '✔';
   color: var(--secondary-color);
 
-  font-size: 4rem;
+  font-size: 4.6rem;
 
   position: absolute;
-  bottom: -0.4rem;
-  left: 0.1rem;
+  bottom: 0rem;
+  left: 0.3rem;
 
   transform: scale(0);
   transition: all 0.2s ease-in-out;

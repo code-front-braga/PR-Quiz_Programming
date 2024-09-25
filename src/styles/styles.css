@@ -570,7 +570,7 @@ figure img {
   width: 100%;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .next-question-button {
@@ -637,87 +637,6 @@ figure img {
   opacity: 1;
 }
 
-.back-button {
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  overflow: hidden;
-  outline: none;
-
-  width: 5.6rem;
-  height: 5.6rem;
-
-  position: relative;
-
-  margin: 0;
-
-  display: block;
-  align-self: flex-start;
-}
-
-.back-button:before,
-.back-button:after {
-  content: '';
-  border-radius: 50%;
-
-  position: absolute;
-  inset: 0.7rem;
-}
-
-.back-button:before {
-  border: 0.4rem solid var(--white-color);
-
-  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-}
-
-.back-button:after {
-  border: 0.4rem solid var(--secondary-color);
-  transform: scale(1.3);
-
-  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 0;
-}
-
-.back-button:hover:before,
-.back-button:focus:before {
-  transform: scale(0.7);
-  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-  opacity: 0;
-}
-
-.back-button:hover:after,
-.-backbutton:focus:after {
-  transform: scale(1);
-  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-
-  opacity: 1;
-}
-
-.button-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: flex;
-}
-
-.button-elem {
-  fill: var(--white-color);
-  transform: rotate(180deg);
-
-  width: 2rem;
-  height: 2rem;
-
-  margin: 1.7rem 1.8rem 0 1.8rem;
-
-  display: block;
-}
-
-.back-button:hover .button-box,
-.back-button:focus .button-box {
-  transform: translateX(-5.6rem);
-  transition: 0.4s;
+.disabled-label {
+  opacity: 0.6;
 }

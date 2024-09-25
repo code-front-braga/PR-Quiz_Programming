@@ -1,106 +1,119 @@
 import { programmingLanguage } from './data.js';
 
-const questionElement = document.querySelector('.question') as HTMLElement;
-const questionNumberElement = document.querySelector('.question-number') as HTMLSpanElement;
+const chronometerDisplayElement = document.querySelector('.timing-display') as HTMLElement;
+
+const questionNumberDisplayElement = document.querySelector('.question-number') as HTMLElement;
+const questionDisplayElement = document.querySelector('.question') as HTMLElement;
+
+const answerOptionsElement = document.querySelector('.answer-options') as HTMLElement;
 
 const nextQuestionButton = document.querySelector('.next-question-button') as HTMLButtonElement;
-const previousQuestionButton = document.querySelector('.back-button') as HTMLButtonElement;
 
-const divContainer = document.querySelector('.answer-options') as HTMLDivElement;
+const arrayOfCorrectAnswers: string[] = [];
+const arrayOfWrongAnswers: string[] = [];
 
-const aCorrectAnswers: string[] = [];
-const aWrongAnswers: string[] = [];
+let currentIndex = 0;
 
-let result = false;
-
-let isForward = true;
-
-let score = 0;
-let currentQuestionIndex = 0;
+/**
+ * Criar os elementos; -----OK-----
+ * Mostrar os elementos na tela; -----OK-----
+ * Captar o clique do usuário; -----OK-----
+ * Quando o usuário avançar para a próxima pergunta, o número da questão deve mudar; -----OK-----
+ * Os inputs que não forem marcados, devem ficar desabilitados; -----OK-----
+ *
+ */
 
 function initQuiz() {
-  displayOptions();
+  nextQuestionButton.addEventListener('click', nextQuestion);
 
-  nextQuestion();
-  previousQuestion();
+  displayElements();
 }
 
-function createDivOptions() {
+function createAllOptionsContainer() {
   const div = document.createElement('div');
-  div.setAttribute('class', 'all-options');
+  div.className = 'all-options';
 
   return div;
 }
 
-function createInput(index: number) {
+function createInput(index: number, optionText: string) {
   const input = document.createElement('input');
-  input.setAttribute('type', 'radio');
-  input.setAttribute('class', 'checkbox');
+  input.type = 'radio';
+  input.className = 'checkbox';
+  input.value = optionText;
   input.id = `opt-${index}`;
   input.name = 'option';
+
+  input.addEventListener('click', () => getClickFromUser(input));
 
   return input;
 }
 
-function addInputEvent(input: HTMLInputElement, fn: void) {
-  input.addEventListener('click', () => fn);
-}
-
-function createLabel(optionText: string, inputId: string) {
+function createLabel(index: number, optionText: string) {
   const label = document.createElement('label');
-  label.setAttribute('for', inputId);
+  label.setAttribute('for', `opt-${index}`);
   label.textContent = optionText;
 
   return label;
 }
 
-function putCreatedElementsOnHtml(optionText: string, index: number) {
-  const divOptionsContainer = createDivOptions();
-  const input = createInput(index);
-  const label = createLabel(optionText, input.id);
+function displayElements() {
+  const allOptions = programmingLanguage[currentIndex].answerOptions;
 
-  divOptionsContainer.appendChild(input);
-  divOptionsContainer.appendChild(label);
+  answerOptionsElement.innerHTML = '';
 
-  return divOptionsContainer;
-}
+  allOptions.forEach((answer, index) => {
+    questionDisplayElement.textContent = programmingLanguage[currentIndex].question;
+    questionNumberDisplayElement.textContent = `Questão ${currentIndex + 1}`;
 
-function displayOptions() {
-  const currentQuestion = programmingLanguage[currentQuestionIndex];
-  const answers = currentQuestion.answerOptions;
+    const allOptionsContainer = createAllOptionsContainer();
 
-  const question = currentQuestion.question;
-  const questionNumber = (currentQuestionIndex + 1).toString().padStart(2, '0');
+    const input = createInput(index, answer);
+    const label = createLabel(index, answer);
 
-  divContainer.innerHTML = '';
-
-  questionElement.textContent = question;
-  questionNumberElement.textContent = `QUESTÃO ${questionNumber}`;
-
-  answers.forEach((answer, index) => {
-    const divOptionsContainer = putCreatedElementsOnHtml(answer, index);
-    divContainer.appendChild(divOptionsContainer);
+    allOptionsContainer.appendChild(input);
+    allOptionsContainer.appendChild(label);
+    answerOptionsElement.appendChild(allOptionsContainer);
   });
 }
 
-function getOptionFromUser() {
-  // TODO: Continuar daqui
+function getClickFromUser(input: HTMLInputElement) {
+  const correctAnswer = programmingLanguage[currentIndex].correctAnswer;
+
+  disableInput(input);
+
+  if (input.value === correctAnswer) {
+    !arrayOfCorrectAnswers.includes(correctAnswer) && arrayOfCorrectAnswers.push(correctAnswer);
+  } else {
+    !arrayOfWrongAnswers.includes(input.value) && arrayOfWrongAnswers.push(input.value);
+  }
+  console.log('Correto:', arrayOfCorrectAnswers);
+  console.log('Errado:', arrayOfWrongAnswers);
+}
+
+function disableInput(input: HTMLInputElement) {
+  const allInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[name="option"]');
+
+  allInputs.forEach(otherInput => {
+    if (otherInput !== input) {
+      otherInput.disabled = true;
+
+      const label = document.querySelector(`label[for="${otherInput.id}"]`) as HTMLLabelElement;
+      label.classList.add('disabled-label');
+    }
+  });
 }
 
 function nextQuestion() {
-  nextQuestionButton.addEventListener('click', () => {
-    currentQuestionIndex++;
+  const quizLength = programmingLanguage.length - 1;
 
-    displayOptions();
-  });
-}
+  if (currentIndex < quizLength) {
+    currentIndex++;
 
-function previousQuestion() {
-  previousQuestionButton.addEventListener('click', () => {
-    currentQuestionIndex--;
-
-    displayOptions();
-  });
+    displayElements();
+  } else {
+    nextQuestionButton.textContent = 'Finalizar';
+  }
 }
 
 initQuiz();

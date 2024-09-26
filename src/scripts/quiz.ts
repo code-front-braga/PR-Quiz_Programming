@@ -58,18 +58,20 @@ function createLabel(index: number, optionText: string) {
 }
 
 function displayElements() {
-  const allOptions = programmingLanguage[currentIndex].answerOptions;
-
   answerOptionsElement.innerHTML = '';
 
+  const allOptions = programmingLanguage[currentIndex].answerOptions;
+
   allOptions.forEach((answer, index) => {
-    questionDisplayElement.textContent = programmingLanguage[currentIndex].question;
-    questionNumberDisplayElement.textContent = `Questão ${currentIndex + 1}`;
+    const currentQuestion = programmingLanguage[currentIndex].question;
+    const formattedQuestionText = `Questão ${(currentIndex + 1).toString().padStart(2, '0')}`;
 
     const allOptionsContainer = createAllOptionsContainer();
-
     const input = createInput(index, answer);
     const label = createLabel(index, answer);
+
+    questionDisplayElement.textContent = currentQuestion;
+    questionNumberDisplayElement.textContent = formattedQuestionText;
 
     allOptionsContainer.appendChild(input);
     allOptionsContainer.appendChild(label);
@@ -82,11 +84,8 @@ function getClickFromUser(input: HTMLInputElement) {
 
   disableInput(input);
 
-  if (input.value === correctAnswer) {
-    !arrayOfCorrectAnswers.includes(correctAnswer) && arrayOfCorrectAnswers.push(correctAnswer);
-  } else {
-    !arrayOfWrongAnswers.includes(input.value) && arrayOfWrongAnswers.push(input.value);
-  }
+  input.value === correctAnswer ? arrayOfCorrectAnswers.push(correctAnswer) : arrayOfWrongAnswers.push(input.value);
+
   console.log('Correto:', arrayOfCorrectAnswers);
   console.log('Errado:', arrayOfWrongAnswers);
 }
@@ -99,7 +98,7 @@ function disableInput(input: HTMLInputElement) {
       otherInput.disabled = true;
 
       const label = document.querySelector(`label[for="${otherInput.id}"]`) as HTMLLabelElement;
-      label.classList.add('disabled-label');
+      label.classList.add('disabled-style');
     }
   });
 }
@@ -111,8 +110,11 @@ function nextQuestion() {
     currentIndex++;
 
     displayElements();
-  } else {
-    nextQuestionButton.textContent = 'Finalizar';
+
+    if (currentIndex === 4) {
+      nextQuestionButton.classList.add('disabled-style');
+      nextQuestionButton.disabled = true;
+    }
   }
 }
 

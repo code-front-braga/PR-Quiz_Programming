@@ -1,14 +1,14 @@
 :root {
-  --default-font-family: 'Questrial', sans-serif;
+  --default-font-family: 'Poppins', sans-serif;
   --default-font-size: 1.6rem;
 
-  --h2-font-family: 'Quicksand', sans-serif;
+  --h2-font-family: 'Ubuntu', system-ui;
   --h2-font-size: 2rem;
 
-  --primary-color: #f4874c;
-  --secondary-color: #5c4a72;
-  --white-color: #f0f8ff;
-  --other-color: #a3586d;
+  --primary-color: #1b0b2a;
+  --secondary-color: #dcc9ae;
+  --white-color: #fffeff;
+  --other-color: #2b1135;
 }
 
 * {
@@ -58,7 +58,7 @@ li {
 }
 
 h2 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: var(--h2-font-family);
   font-size: var(--h2-font-size);
 }
 
@@ -70,7 +70,8 @@ main {
 }
 
 #main-home {
-  background: var(--white-color);
+  background-color: var(--primary-color);
+  background-image: linear-gradient(124deg, var(--primary-color) 0%, #37183d 33%, #6b2b60 66%, #b74d93 100%);
 }
 
 .main-wrapper {
@@ -82,7 +83,6 @@ figure {
 }
 
 figure img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -102,7 +102,7 @@ figure img {
 }
 
 .text-content h1 {
-  color: var(--primary-color);
+  color: var(--white-color);
 
   font-size: 4rem;
 }
@@ -119,7 +119,7 @@ figure img {
 }
 
 .circle {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   -webkit-box-shadow: 0 0.6rem 1rem 0 #00000050;
   box-shadow: 0 0.6rem 1rem 0rem #00000050;
   border-radius: 50%;
@@ -141,7 +141,7 @@ figure img {
 
 .circle:hover {
   cursor: pointer;
-  background-color: #171717;
+  opacity: 0.8;
   box-shadow: 0 0.8rem 1.5rem 0 #00000050;
 }
 
@@ -184,9 +184,10 @@ figure img {
 }
 
 .sub-circle label {
-  background-color: var(--primary-color);
-  color: #171717;
+  background-color: var(--other-color);
+  color: var(--secondary-color);
 
+  font-family: var(--h2-font-family);
   font-size: 1.6rem;
   line-height: 4rem;
 
@@ -201,8 +202,7 @@ figure img {
 .sub-circle label:hover {
   cursor: pointer;
 
-  color: var(--white-color);
-  background-color: var(--secondary-color);
+  opacity: 0.7;
 }
 
 .subs {
@@ -230,8 +230,7 @@ figure img {
 
 .hidden-trigger:checked ~ .circle {
   cursor: pointer;
-  background-color: var(--other-color);
-  box-shadow: 0rem 0.8rem 1.3rem 0rem #00000080;
+  background: var(--secondary-color);
 
   transform: scale(0.75);
 }
@@ -285,7 +284,7 @@ figure img {
 .guidelines-content-popup {
   background: var(--white-color);
   border-radius: 1rem;
-  border: 0.2rem solid;
+  border: 0.2rem solid #1b0b2a;
   -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
   -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
   box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
@@ -304,11 +303,23 @@ figure img {
 }
 
 .guidelines-content-popup h2 {
+  color: var(--primary-color);
+
+  font-family: var(--h2-font-family);
   font-size: 2.8rem;
 }
 
 .guidelines-content-popup ul li {
-  list-style: '✅';
+  color: var(--primary-color);
+  list-style: none;
+
+  font-family: var(--h2-font-family);
+  line-height: 3.2rem;
+}
+
+.guidelines-content-popup ul li::before {
+  content: '☑️';
+  color: var(--primary-color);
   list-style-position: inside;
 
   line-height: 3.2rem;
@@ -320,7 +331,7 @@ figure img {
 }
 
 .fade {
-  background: #00000088;
+  background: #00000095;
 
   position: absolute;
   inset: 0;
@@ -430,12 +441,11 @@ figure img {
 }
 
 #main-quiz {
-  background: var(--secondary-color);
+  background-color: #1b0b2a;
 }
 
 .main-quiz-wrapper {
-  background-color: #fbab7e;
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  background: var(--secondary-color);
   border-radius: 0.8rem;
   -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
   -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
@@ -454,13 +464,17 @@ figure img {
 }
 
 .timing-display {
+  color: var(--primary-color);
+
   font-size: 4rem;
 }
 
 .question-number {
+  color: var(--primary-color);
+
+  font-family: var(--h2-font-family);
+  font-size: 2.2rem;
   font-weight: 700;
-  font-size: 1.8rem;
-  letter-spacing: 0.6rem;
 }
 
 .quiz-content {
@@ -472,6 +486,10 @@ figure img {
   gap: 4.2rem;
 }
 
+.question {
+  color: var(--primary-color);
+}
+
 .answer-options {
   flex-direction: column;
   gap: 2rem;
@@ -480,7 +498,6 @@ figure img {
 
 .all-options {
   cursor: pointer;
-  border-bottom: 2px solid var(--secondary-color);
 
   display: flex;
   align-items: center;
@@ -492,10 +509,11 @@ figure img {
 
 .all-options label {
   cursor: pointer;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   color: var(--white-color);
   border-radius: 0.4rem;
 
+  font-family: var(--h2-font-family);
   font-size: 1.8rem;
 
   width: 100%;
@@ -507,7 +525,7 @@ figure img {
   cursor: pointer;
   appearance: none;
   border-radius: 0.4rem;
-  border: 0.2rem solid var(--white-color);
+  border: 0.2rem solid var(--primary-color);
   aspect-ratio: 1;
 
   width: 4rem;
@@ -519,9 +537,9 @@ figure img {
 
 .checkbox::before {
   content: '✔';
-  color: var(--secondary-color);
+  color: var(--primary-color);
 
-  font-size: 4.6rem;
+  font-size: 5rem;
 
   position: absolute;
   bottom: 0rem;
@@ -566,7 +584,7 @@ figure img {
   }
 }
 
-.buttons-container {
+.button-container {
   width: 100%;
 
   align-items: center;
@@ -576,7 +594,7 @@ figure img {
 .next-question-button {
   cursor: pointer;
   background-color: var(--white-color);
-  color: #171717;
+  color: var(--primary-color);
   border-radius: 0.5rem;
   border: none;
   overflow: hidden;
@@ -597,8 +615,8 @@ figure img {
 
 .next-question-button::before {
   content: '';
-  background: var(--secondary-color);
-  background: linear-gradient(90deg, var(--other-color) 20%, var(--secondary-color) 100%);
+  background: var(--primary-color);
+  background: linear-gradient(90deg, var(--other-color) 20%, #6b2b60 100%);
 
   position: absolute;
   bottom: 0;
@@ -637,6 +655,8 @@ figure img {
   opacity: 1;
 }
 
-.disabled-label {
-  opacity: 0.6;
+.disabled-style {
+  opacity: 0.7;
+
+  pointer-events: none;
 }

@@ -18,13 +18,15 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:wght@300;400&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
 
   <link rel="stylesheet" href="./src/styles/styles.css">
 </head>
 
-<body class="d-flex">
+<body>
   <main id="main-home">
     <div class="main-wrapper d-flex">
 
@@ -42,100 +44,65 @@
           <h2>Escolha o tema, clicando no "+" e divirta-se estudando!</h2>
         </div>
 
-        <div class="open-button-wrapper animate__animated animate__pulse animate__infinite">
-          <input type="checkbox" id="toogle" class="hidden-trigger" />
-          <label for="toogle" class="circle">
-            <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48"
-              height="48" xml:space="preserve" version="1.1" viewBox="0 0 48 48">
-              <image width="48" height="48"
-                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC">
-              </image>
-            </svg>
-          </label>
+        <div class="inputs-container">
+          <img class="interrogation-img" src="./src/images/interrogation.png" alt="">
+          <div class="open-button-wrapper animate__animated animate__pulse animate__infinite">
+            <input type="checkbox" id="toogle" class="hidden-trigger" />
+            <label for="toogle" class="circle">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="none" stroke="#1b0b2a" stroke-linecap="round" stroke-width="1" d="M12 17V7m-5 5h10" />
+              </svg>
+            </label>
 
-          <div class="subs">
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub1"
-                class="hidden-sub-trigger programming-button" />
-              <label class="programming" for="sub1">Programação</label>
-            </button>
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub2"
-                class="hidden-sub-trigger frameworks-button" />
-              <label class="frameworks" for="sub2">Frameworks</label>
-            </button>
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub3"
-                class="hidden-sub-trigger js-methods-button" />
-              <label class="js-methods" for="sub3">Métodos JavaScript</label>
-            </button>
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub4" class="hidden-sub-trigger frontend-button" />
-              <label class="front-end" for="sub4">Front End</label>
-            </button>
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub5"
-                class="hidden-sub-trigger programming-language-button" />
-              <label class="programming-language" for="sub5">Linguagem de Programação</label>
-            </button>
-            <button class="sub-circle">
-              <input value="1" name="sub-circle" type="checkbox" id="sub6" class="hidden-sub-trigger nodejs-button" />
-              <label class="nodejs" for="sub6">Node.js</label>
-            </button>
+            <div class="subs">
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub1"
+                  class="hidden-sub-trigger programming-button" />
+                <label class="programming-language" for="sub1">Linguagem de Programação</label>
+              </button>
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub4"
+                  class="hidden-sub-trigger frontend-button" />
+                <label class="front-end" for="sub4">Front End</label>
+              </button>
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub2"
+                  class="hidden-sub-trigger frameworks-button" />
+                <label class="frameworks" for="sub2">Frameworks</label>
+              </button>
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub3"
+                  class="hidden-sub-trigger js-methods-button" />
+                <label class="js-methods" for="sub3">Métodos JavaScript</label>
+              </button>
+
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub5"
+                  class="hidden-sub-trigger programming-language-button" />
+                <label class="programming" for="sub5">Programação</label>
+              </button>
+              <button class="sub-circle">
+                <input value="1" name="sub-circle" type="checkbox" id="sub6" class="hidden-sub-trigger nodejs-button" />
+                <label class="nodejs" for="sub6">Node.js</label>
+              </button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- <main id="main-quiz">
+  <main id="main-quiz">
     <div class="fade"></div>
     <div class="main-quiz-wrapper d-flex">
       <span class="timing-display">00 : 00 : 00</span>
+      <span class="question-number"></span>
 
       <div class="quiz-content d-flex">
-        <h2 class="question">Qual linguagem de programação é conhecida por sua eficiência e é frequentemente utilizada
-          para o desenvolvimento de sistemas operacionais e jogos?</h2>
-        <div class="answer-options d-flex">
-          <div class="opt-1-container all-options">
-            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
-            <label for="opt-1">Um framework é utilizado </label>
-          </div>
-          <div class="opt-1-container all-options">
-            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
-            <label for="opt-1">Um framework é utilizado apenas para desenvolvimento back-end</label>
-          </div>
-          <div class="opt-1-container all-options">
-            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
-            <label for="opt-1">Um framework é utilizado apenas para desenvolvimento back-end, enquanto uma biblioteca é
-              utilizada apenas para front-end.</label>
-          </div>
-          <div class="opt-1-container all-options">
-            <input class="checkbox opt-1" name="option" id="opt-1" type="radio">
-            <label for="opt-1">Um framework </label>
-          </div>
-
-        </div>
+        <h2 class="question"></h2>
+        <div class="answer-options d-flex"></div>
       </div>
-      <div class="buttons-container d-flex">
-        <button class="back-button">
-          <div class="button-box">
-            <span class="button-elem">
-              <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
-                </path>
-              </svg>
-            </span>
-            <span class="button-elem">
-              <svg viewBox="0 0 46 40">
-                <path
-                  d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
-                </path>
-              </svg>
-            </span>
-          </div>
-        </button>
+      <div class="button-container d-flex">
         <button class="next-question-button">
           <span class="label">Próximo</span>
           <span class="icon d-flex-center">
@@ -147,25 +114,142 @@
           </span>
         </button>
       </div>
-    </div> -->
+    </div>
 
-  <!-- <div class="guidelines-content-popup d-flex-center pos-absolute-center">
-      <h2>Olá! Aqui vai algumas orientações:</h2>
+    <div class="guidelines-content-popup d-flex-center pos-absolute-center">
+      <h2>Olá! Fique atento às orientações:</h2>
       <ul class="ul-guidelines">
         <li>Esse quiz contém <span class="questions-quantity">5</span> questões.</li>
-        <li>Cada questão possui <span class="alternatives-quantity">5</span> alternativas e somente uma está correta.
+        <li>Cada questão possui <span class="alternatives-quantity">5</span> alternativas e somente uma está
+          correta.
         </li>
+        <li>Você só tem uma chance de escolher, ou seja, não poderá alterar a resposta</li>
         <li>Cada acerto vale 20 pontos</li>
         <li>Se você errar, perde 15 pontos</li>
         <li>Você terá 40 segundos para finalizar o quiz</li>
       </ul>
+      <p class="important-info"><span>Atenção:</span> O contador iniciará assim que você apertar o botão abaixo!</p>
       <span>Boa sorte!</span>
       <button class="ready-button">Estou pronto!</button>
-    </div> -->
+    </div>
   </main>
 
+  <main id="main-score">
+    <h1>ACOMPANHE SEU RESULTADO!</h1>
 
+    <section class="section-questions-recapping">
+      <h2 class="theme-text">TEMA DO QUIZ REALIZADO: <span class="theme-name"></span></h2>
+      <div class="text-container">
 
+        <div class="question-box">
+          <h3 class="question-number"></h3>
+          <span class="question-result">A</span>
+          <div class="options">
+            <ul>
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-1 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-2 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-3 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-4 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+            </ul>
+            <p>Pontuação adquirida nessa questão: <span>15</span></p>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h3 class="question-number"></h3>
+          <span class="question-result">B</span>
+          <div class="options">
+            <ul>
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-5 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-6 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-7 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-8 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+            </ul>
+            <p>Pontuação adquirida nessa questão: <span>15</span></p>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h3 class="question-number"></h3>
+          <span class="question-result">C</span>
+          <div class="options">
+            <ul>
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-9 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-10 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-11 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-12 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+            </ul>
+            <p>Pontuação adquirida nessa questão: <span>15</span></p>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h3 class="question-number"></h3>
+          <span class="question-result">D</span>
+          <div class="options">
+            <ul>
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-13 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-14 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-15 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-16 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+            </ul>
+            <p>Pontuação adquirida nessa questão: <span>15</span></p>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h3 class="question-number"></h3>
+          <span class="question-result">E</span>
+          <div class="options">
+            <ul>
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-17 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-18 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-19 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+
+              <li><i class="bi bi-arrow-right-short"></i> <span class="option-20 opt"></span> <span
+                  class="answer-or-wrong"><em></em></span></li>
+            </ul>
+            <p>Pontuação adquirida nessa questão: <span>15</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  </main>
   <script type="module" src="dist/js/index.js"></script>
 </body>
 

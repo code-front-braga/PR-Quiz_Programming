@@ -19,8 +19,7 @@
   <title>Home</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./src/styles/styles.css">
-  <link rel="stylesheet" href="./src/styles/classes.css">
+  <link rel="stylesheet" href="./src/styles/index.css">
 </head>
 
 <body>
@@ -35,14 +34,14 @@
       </a>
 
       <div class="header__container-quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
-        <button class="open-quiz-button">
-          <img id="quiz-logo-img" class="open-quiz-button__hovered-img" src="./src/images/q-hovered-icon.svg"
+        <button class="open-quiz-button js-open-quiz-button">
+          <img id="quiz-logo-hovered-img" class="open-quiz-button__hovered-img" src="./src/images/q-hovered-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor verde e a interrogação tem cor branca">
-          <img id="quiz-logo-img" class="open-quiz-button__main-img" src="./src/images/q-main-icon.svg"
+          <img id="quiz-logo-main-img" class="open-quiz-button__main-img" src="./src/images/q-main-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor branca e a interrogação tem cor verde">
-          <span>¿</span>
+          <span class="open-quiz-button__interrogation open-quiz-button__interrogation--green-color">¿</span>
         </button>
-        <span>devQu<span>¿</span>zzes</span>
+        <span>devQu<span class="header__container-quiz-logo-container__interrogation">¿</span>zzes</span>
       </div>
     </div>
   </header>

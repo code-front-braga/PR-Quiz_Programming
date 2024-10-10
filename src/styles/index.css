@@ -1,1 +1,103 @@
-/*# sourceMappingURL=index.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #f0f8ff;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+span {
+  font-family: "Poiret One", system-ui;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+#header {
+  background: #2b1135;
+  color: #f0f8ff;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 0.6rem 3.2rem;
+  z-index: 2;
+}
+#header .header__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .header__container .header__container-link-github {
+  color: #f0f8ff;
+  font-size: 1.46rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#header .header__container .header__container-link-github .link-github__span {
+  font-size: 1.48rem;
+  font-weight: lighter;
+}
+#header .header__container .header__container-link-github .link-github__my-logo {
+  width: 4.6rem;
+}
+#header .header__container .header__container-quiz-logo-container {
+  position: relative;
+  right: calc(50% - 9.2rem);
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-main-img,
+#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-hovered-img {
+  width: 3.6rem;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-hovered-img {
+  position: absolute;
+  visibility: hidden;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button .open-quiz-button__interrogation {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button .open-quiz-button__interrogation--green-color {
+  color: #8adea4;
+}
+#header .header__container .header__container-quiz-logo-container .open-quiz-button .open-quiz-button__interrogation.open-quiz-button__interrogation--white-color {
+  color: #f0f8ff;
+}
+#header .header__container .header__container-quiz-logo-container :last-child {
+  color: #f0f8ff;
+  font-family: "Poiret One", system-ui;
+  font-size: 2.8rem;
+  font-weight: 100;
+}
+#header .header__container .header__container-quiz-logo-container :last-child .header__container-quiz-logo-container__interrogation {
+  color: #8adea4;
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: bold;
+}/*# sourceMappingURL=index.css.map */

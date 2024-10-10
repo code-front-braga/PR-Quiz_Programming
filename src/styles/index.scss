@@ -1,0 +1,147 @@
+$primary-font: 'Poiret One', system-ui;
+$secondary-font: 'Inter Tight', system-ui;
+$tertiary-font: 'Afacad Flux', sans-serif;
+
+$blackcurrantColor: #2b1135;
+$aliceblueColor: #f0f8ff;
+$chinookColor: #8adea4;
+
+@mixin d-flex-center-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+@mixin d-flex-center-vertical {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin theme($backgroundColor: #2b1135, $textColor: #8adea4) {
+  background: $backgroundColor;
+  color: $textColor;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $aliceblueColor;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+span {
+  font-family: $primary-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+#header {
+  background: $blackcurrantColor;
+  color: $aliceblueColor;
+
+  position: fixed;
+
+  width: 100%;
+
+  display: flex;
+  padding: 0.6rem 3.2rem;
+
+  z-index: 2;
+
+  .header__container {
+    width: 100%;
+
+    @include d-flex-center-horizontal;
+    justify-content: space-between;
+
+    .header__container-link-github {
+      color: $aliceblueColor;
+
+      font-size: 1.46rem;
+
+      @include d-flex-center-horizontal;
+      gap: 1rem;
+
+      .link-github__span {
+        font-size: 2rem;
+        font-weight: lighter;
+      }
+
+      .link-github__my-logo {
+        width: 4.6rem;
+      }
+    }
+
+    .header__container-quiz-logo-container {
+      position: relative;
+      right: calc(50% - 9.2rem);
+
+      @include d-flex-center-horizontal;
+      gap: 1.4rem;
+
+      .open-quiz-button {
+        position: relative;
+
+        @include d-flex-center-horizontal;
+
+        #quiz-logo-main-img,
+        #quiz-logo-hovered-img {
+          width: 3.6rem;
+        }
+
+        #quiz-logo-hovered-img {
+          position: absolute;
+
+          visibility: hidden;
+        }
+
+        .open-quiz-button__interrogation {
+          font-family: $tertiary-font;
+          font-size: 4rem;
+          font-weight: bold;
+        }
+
+        .open-quiz-button__interrogation--green-color {
+          color: $chinookColor;
+        }
+
+        .open-quiz-button__interrogation.open-quiz-button__interrogation--white-color {
+          color: $aliceblueColor;
+        }
+      }
+
+      :last-child {
+        color: $aliceblueColor;
+
+        font-family: $primary-font;
+        font-size: 2.8rem;
+        font-weight: 100;
+
+        .header__container-quiz-logo-container__interrogation {
+          color: $chinookColor;
+
+          font-family: $tertiary-font;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

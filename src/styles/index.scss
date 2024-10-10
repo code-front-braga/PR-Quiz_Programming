@@ -44,12 +44,6 @@ body {
   overflow: hidden;
 }
 
-h1,
-h2,
-h3 {
-  font-family: $primary-font;
-}
-
 a {
   text-decoration: none;
 }
@@ -355,6 +349,209 @@ button {
             font-size: 2.6rem;
             font-weight: bold;
           }
+        }
+      }
+    }
+  }
+}
+
+/* TODO quiz-page */
+#quiz-page {
+  position: relative;
+  top: 6.52rem;
+
+  min-height: calc(100vh - $header-height);
+
+  display: flex;
+  padding: 1.8rem;
+
+  .fade-score {
+    background: #00000099;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s ease-in-out;
+
+    z-index: 2;
+
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: baseline;
+
+      span {
+        color: $chinook-color;
+
+        font-family: $tertiary-font;
+        font-size: 4rem;
+      }
+
+      img {
+        width: 6rem;
+      }
+    }
+  }
+
+  .quiz-page__container {
+    background: $aliceblue-color;
+    border-radius: 10px;
+    box-shadow: 0 0 0.4rem #000;
+
+    position: relative;
+
+    width: 100%;
+    height: 60rem;
+
+    margin: auto;
+
+    @include d-flex-center-horizontal;
+    gap: 1.4rem;
+    padding: 2.2rem;
+
+    .quiz-page__question-container {
+      background: #00000022;
+      border-radius: 5px;
+
+      width: 60%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1.4rem;
+
+      .question-container__question {
+        height: 100%;
+
+        @include d-flex-center-vertical;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.4rem;
+      }
+
+      .question-container__next-question-button {
+        cursor: pointer;
+        @include theme;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 0.4rem #000;
+
+        font-size: 1.6rem;
+
+        width: fit-content;
+
+        align-self: flex-end;
+        padding: 1rem;
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+
+        &:active {
+          box-shadow: 0 0 0.2rem #000;
+        }
+      }
+    }
+    .quiz-page__result-container {
+      background: #00000022;
+      border-radius: 5px;
+      box-shadow: 0 0 0.4rem #000;
+      // opacity: 0;
+      // visibility: hidden;
+      transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      width: 40%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1.4rem;
+
+      .quiz-page__question-result-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+
+        .user-response,
+        .correct-response,
+        .explanation-text {
+          font-size: 1.6rem;
+          line-height: 2.8rem;
+        }
+
+        .user-response__result,
+        .correct-response__result {
+          background: $blackcurrant-color;
+          color: $aliceblue-color;
+          border-radius: 2.5px;
+
+          font-family: 'Inter Tight', system-ui;
+          font-weight: normal;
+
+          padding: 0.4rem;
+        }
+
+        .explanation-paragraph {
+          font-family: 'Afacad Flux', sans-serif;
+          font-size: 1.64rem;
+          text-align: justify;
+        }
+      }
+
+      .quiz-page__guidelines-container {
+        background: $chinook-color;
+        border: 0.2rem solid $blackcurrant-color;
+        -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+        -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+        box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem #000000bf;
+        opacity: 1;
+        transition: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        width: calc(40% - 2.8rem);
+        height: calc(100% - 4.4rem);
+
+        position: absolute;
+        right: 2.2rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 2.4rem;
+
+        h2 {
+          color: $blackcurrant-color;
+
+          font-size: 2.8rem;
+        }
+
+        .guidelines-container__guidelines-list li {
+          color: #2b1135;
+          list-style: none;
+
+          font-family: 'Inter Tight', system-ui;
+          font-size: 1.8rem;
+          font-weight: bold;
+          line-height: 4rem;
+
+          &::before {
+            content: '☑️';
+            list-style-position: inside;
+          }
+        }
+
+        &:last-child {
+          font-family: 'Afacad Flux', sans-serif;
+          font-size: 4rem;
         }
       }
     }

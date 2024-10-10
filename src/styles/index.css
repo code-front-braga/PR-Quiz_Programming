@@ -15,8 +15,7 @@ body {
 
 h1,
 h2,
-h3,
-span {
+h3 {
   font-family: "Poiret One", system-ui;
 }
 
@@ -111,6 +110,13 @@ button {
   display: flex;
   padding: 1.8rem;
 }
+#home-page .home-page__fade {
+  background: rgba(255, 255, 255, 0.5843137255);
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 #home-page .home-page__container {
   background: rgba(0, 0, 0, 0.1450980392);
   border-radius: 10px;
@@ -185,4 +191,73 @@ button {
 }
 #home-page .home-page__container .swiper .swiper-button-prev {
   left: 0rem;
+}
+#home-page .home-page__quizzes-theme {
+  background: #2b1135;
+  border-radius: 10px;
+  box-shadow: 0px 21px 49px 4px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 3;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__close-button {
+  cursor: pointer;
+  background: #2b1135;
+  border: none;
+  border-radius: 30px 26px 30px 4px;
+  box-shadow: 9px 13px 24px 1px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: -4.4rem;
+  right: -4.4rem;
+  display: flex;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__close-button img {
+  width: 4.6rem;
+  margin: auto;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  padding: 1.8rem;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list li {
+  cursor: pointer;
+  background: #f0f8ff;
+  border-radius: 5px;
+  list-style: none;
+  width: 16rem;
+  display: flex;
+  padding: 1rem;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list li a {
+  color: #2b1135;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list li a img {
+  filter: drop-shadow(0 0.7rem 0.4rem rgba(0, 0, 0, 0.5843137255));
+  width: 6rem;
+  transform: scale(1);
+  transition: 0.6s ease-in-out;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list li a:active > img {
+  filter: drop-shadow(0 0.4rem 0.4rem #000);
+  transform: scale(0.9);
+  transition: none;
+}
+#home-page .home-page__quizzes-theme .quizzes-theme__list li a span {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2.6rem;
+  font-weight: bold;
 }/*# sourceMappingURL=index.css.map */

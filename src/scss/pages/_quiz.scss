@@ -1,0 +1,212 @@
+@import '../utils/colors';
+@import '../abstract/mixin';
+@import '../base/typography';
+
+#quiz-page {
+  @include pageConfig;
+
+  .fade-score {
+    @include fade(#00000099);
+
+    background: #00000099;
+
+    .circle {
+      @include position-absolute-center;
+
+      background: transparent;
+      border-radius: 50%;
+
+      width: 50px;
+      height: 50px;
+
+      display: flex;
+      align-items: baseline;
+
+      span {
+        color: $chinook-color;
+
+        font-size: 4rem;
+      }
+
+      img {
+        width: 6rem;
+      }
+    }
+    &.fade-score--active {
+      @include is-visible;
+    }
+  }
+
+  .quiz-page__container {
+    @include pagesContainer($selago-color, $shadow-color);
+    @include d-flex-center;
+
+    position: relative;
+
+    height: 60rem;
+
+    gap: 1.4rem;
+    padding: 2.2rem;
+
+    .quiz-page__question-container {
+      background: #00000022;
+      border-radius: 5px;
+
+      width: 60%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      padding: 1.4rem;
+
+      .question-container__question {
+        @include d-flex-center;
+
+        height: 100%;
+
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.4rem;
+
+        ul.question__response-options-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1.8rem;
+
+          li.response-options-container__option {
+            @include theme($blackcurrant-color, $chinook-color);
+
+            cursor: pointer;
+            border-radius: 5px;
+
+            padding: 1.2rem;
+
+            &.response-options-container__option--is-correct {
+              @include theme($blackcurrant-color, $chinook-color);
+            }
+
+            &.response-options-container__option--is-wrong {
+              @include theme($alert-color, $blackcurrant-color);
+            }
+          }
+        }
+      }
+
+      .question-container__next-question-button {
+        @include theme($blackcurrant-color, $chinook-color);
+
+        border-radius: 5px;
+        box-shadow: 0 0 0.4rem $shadow-color;
+
+        align-self: flex-end;
+        padding: 1rem;
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+
+        &:active {
+          box-shadow: 0 0 0.2rem $shadow-color;
+        }
+      }
+    }
+    .quiz-page__result-container {
+      background: #00000022;
+      border-radius: 5px;
+      box-shadow: 0 0 0.4rem $shadow-color;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      width: 40%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1.4rem;
+
+      &.quiz-page__result-container--active {
+        @include is-visible;
+      }
+
+      .quiz-page__question-result-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+
+        .user-response,
+        .correct-response,
+        .explanation-text {
+          font-size: 1.6rem;
+          line-height: 2.8rem;
+        }
+
+        .user-response__result,
+        .correct-response__result {
+          @include theme($blackcurrant-color, $aliceblue-color);
+
+          border-radius: 2.5px;
+
+          font-weight: normal;
+
+          padding: 0.4rem;
+        }
+
+        .explanation-paragraph {
+          font-size: 1.64rem;
+          text-align: justify;
+        }
+      }
+    }
+    .quiz-page__guidelines-container {
+      &.quiz-page__guidelines-container--active {
+        @include is-not-visible;
+      }
+
+      background: $chinook-color;
+      border: 0.2rem solid $blackcurrant-color;
+      border-radius: 1rem;
+      -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+      -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+      box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+      opacity: 1;
+      visibility: visible;
+      transition: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      width: calc(40% - 2.8rem);
+      height: calc(100% - 4.4rem);
+
+      position: absolute;
+      right: 2.2rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 2.4rem;
+
+      h2 {
+        color: $blackcurrant-color;
+
+        font-size: 2.8rem;
+      }
+
+      .guidelines-container__guidelines-list li {
+        color: $blackcurrant-color;
+
+        font-weight: bold;
+        line-height: 4rem;
+
+        &::before {
+          content: '☑️';
+          list-style-position: inside;
+        }
+      }
+
+      &:last-child {
+        font-size: 4rem;
+      }
+    }
+  }
+}

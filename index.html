@@ -19,7 +19,7 @@
   <title>Home</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./src/styles/index.css">
+  <link rel="stylesheet" href="./src/scss/main.css">
 </head>
 
 <body>
@@ -33,14 +33,14 @@
       </a>
 
       <div class="header__container-quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
-        <button class="open-quiz-button js-open-quiz-button">
+        <button class="open-quiz-button js-open-quiz-button" aria-label="Abre a janela com os temas">
           <img id="quiz-logo-hovered-img" class="open-quiz-button__hovered-img" src="./src/images/q-hovered-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor verde e a interrogação tem cor branca">
           <img id="quiz-logo-main-img" class="open-quiz-button__main-img" src="./src/images/q-main-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor branca e a interrogação tem cor verde">
-          <span class="open-quiz-button__interrogation open-quiz-button__interrogation--green-color">¿</span>
+          <span class="open-quiz-button__interrogation">¿</span>
         </button>
-        <span>devQu<span class="header__container-quiz-logo-container__interrogation">¿</span>zzes</span>
+        <h2>devQu<span class="header__container-quiz-logo-container__interrogation">¿</span>zzes</h2>
       </div>
     </div>
   </header>
@@ -152,7 +152,7 @@
     </div>
 
     <div class="home-page__quizzes-theme">
-      <button class="quizzes-theme__close-button" aria-label="Fecha o pop-up dos temas">
+      <button class="quizzes-theme__close-button" aria-label="Fecha a janela dos temas">
         <img src="./src/images/close_icon.svg" alt="Imagem de um X">
       </button>
 
@@ -229,7 +229,6 @@
       </ul>
     </div>
   </section>
-
 
   <script type="module" src="dist/js/index.js"></script>
 </body>

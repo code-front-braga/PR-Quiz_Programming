@@ -14,7 +14,7 @@
   <title>Quiz</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="./src/styles/index.css">
+  <link rel="stylesheet" href="./src/scss/main.css">
 </head>
 
 <body>
@@ -28,12 +28,12 @@
       </a>
 
       <div class="header__container-quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
-        <button class="open-quiz-button js-open-quiz-button">
+        <button class="open-quiz-button js-open-quiz-button" aria-label="Abre a janela com os temas">
           <img id="quiz-logo-hovered-img" class="open-quiz-button__hovered-img" src="./src/images/q-hovered-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor verde e a interrogação tem cor branca">
           <img id="quiz-logo-main-img" class="open-quiz-button__main-img" src="./src/images/q-main-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor branca e a interrogação tem cor verde">
-          <span class="open-quiz-button__interrogation open-quiz-button__interrogation--green-color">¿</span>
+          <span class="open-quiz-button__interrogation">¿</span>
         </button>
         <span>devQu<span class="header__container-quiz-logo-container__interrogation">¿</span>zzes</span>
       </div>
@@ -186,7 +186,7 @@
     <div class="quiz-page__container">
       <article class="quiz-page__question-container">
         <div class="question-container__question"><!-- Aqui vai toda a questão: pergunta e opções de respostas --></div>
-        <button class="question-container__next-question-button" disabled>Próxima Questão</button>
+        <button class="question-container__next-question-button" aria-label="Avança para a próxima questão" disabled>Próxima Questão</button>
       </article>
 
       <div class="quiz-page__result-container">
@@ -194,24 +194,24 @@
           <div class="question-result-container__question">
             <!-- Aqui vai toda a questão: pergunta e opções de respostas -->
           </div>
-          <h3 class="user-response">Sua Resposta: <br><strong class="user-response__result">AAAA</strong></h3>
-          <h3 class="correct-response">Resposta Correta: <br><strong class="correct-response__result">BBBBB</strong></h3>
+          <h3 class="user-response">Sua Resposta: <br><span class="user-response__result">AAAA</span></h3>
+          <h3 class="correct-response">Resposta Correta: <br><span class="correct-response__result">BBBBB</span>
+          </h3>
           <span class="explanation-text">Explicação</span>
           <p class="explanation-paragraph">dsdsdsdsd</p>
         </article>
+      </div>
 
-        <div class="quiz-page__guidelines-container">
-          <h2>Olá! Fique atento às orientações:</h2>
-          <ul class="guidelines-container__guidelines-list">
-            <li>Esse quiz contém <strong class="guidelines-list__questions-quantity"></strong> questões</li>
-            <li>Cada questão possui <strong class="guidelines-list__alternatives-quantity"></strong> alternativas e
-              somente uma está correta</li>
-            <li>Você só terá uma chance de escolher, ou seja, não poderá alterar a resposta</li>
-            <li>O botão "Próxima Questão" só estará habilitado depois que você marcar uma opção de resposta.</li>
-          </ul>
-          <span>Boa Sorte!</span>
-        </div>
-
+      <div class="quiz-page__guidelines-container">
+        <h2>Olá! Fique atento às orientações:</h2>
+        <ul class="guidelines-container__guidelines-list">
+          <li>Esse quiz contém <strong class="guidelines-list__questions-quantity"></strong> questões</li>
+          <li>Cada questão possui <strong class="guidelines-list__alternatives-quantity"></strong> alternativas e
+            somente uma está correta</li>
+          <li>Você só terá uma chance de escolher, ou seja, não poderá alterar a resposta</li>
+          <li>O botão "Próxima Questão" só estará habilitado depois que você marcar uma opção de resposta.</li>
+        </ul>
+        <span>Boa Sorte!</span>
       </div>
     </div>
 

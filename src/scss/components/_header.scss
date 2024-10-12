@@ -1,0 +1,102 @@
+@import '../utils/colors';
+@import '../abstract/mixin';
+@import '../base/typography';
+
+#header {
+  @include theme($blackcurrant-color, $aliceblue-color);
+
+  position: fixed;
+
+  width: 100%;
+
+  display: flex;
+  padding: 0.6rem 3.2rem;
+
+  z-index: 2;
+
+  .header__container {
+    @include d-flex-center;
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    .header__container-link-github {
+      @include d-flex-center;
+
+      gap: 1rem;
+
+      .link-github__span {
+        color: $aliceblue-color;
+        
+        font-size: 1.6rem;
+        font-weight: normal;
+      }
+
+      .link-github__my-logo {
+        width: 4.6rem;
+      }
+    }
+
+    .header__container-quiz-logo-container {
+      @include d-flex-center;
+
+      position: relative;
+      right: calc(50% - 9.2rem);
+
+      gap: 1.4rem;
+
+      .open-quiz-button {
+        position: relative;
+
+        @include d-flex-center;
+
+        #quiz-logo-main-img,
+        #quiz-logo-hovered-img {
+          width: 3.6rem;
+        }
+
+        #quiz-logo-hovered-img {
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.7s ease-in-out;
+
+          position: absolute;
+
+          &.quiz-logo-hovered-img--active {
+            @include is-visible;
+
+            filter: drop-shadow(0 0 2rem $chinook-color);
+          }
+        }
+
+        .open-quiz-button__interrogation {
+          color: $chinook-color;
+
+          font-family: $tertiary-font;
+          font-size: 4rem;
+          font-weight: bold;
+
+          &.open-quiz-button__interrogation--active {
+            color: $aliceblue-color;
+          }
+        }
+      }
+
+      :last-child {
+        color: $aliceblue-color;
+
+        font-family: $primary-font;
+        font-size: 2.8rem;
+        font-weight: normal;
+
+        .header__container-quiz-logo-container__interrogation {
+          color: $chinook-color;
+
+          font-family: $tertiary-font;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+@import '../utils/colors';
+@import '../abstract/mixin';
+@import '../base/typography';
+
+#home-page {
+  @include pageConfig;
+
+  .home-page__fade {
+    @include fade(#ffffff95);
+
+    &.home-page__fade--active {
+      @include is-visible;
+    }
+  }
+
+  .home-page__container {
+    @include pagesContainer(#00000025, $shadow-color);
+    @include d-flex-center;
+
+    padding: 0.6rem;
+
+    .container__figure {
+      width: 50%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .swiper {
+      width: 50%;
+      height: 100%;
+
+      display: flex;
+      gap: 6rem;
+
+      .swiper-slide {
+        @include d-flex-center;
+
+        height: 100%;
+
+        margin: auto;
+
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 2rem;
+
+        h2 {
+          @include theme($blackcurrant-color, $chinook-color);
+
+          border-radius: 5px;
+
+          font-size: 2.6rem;
+          font-weight: normal;
+          line-height: 2.4rem;
+
+          padding: 0.6rem;
+        }
+
+        ul {
+          @include d-flex-center;
+          flex-direction: column;
+          gap: 1rem;
+
+          li {
+            color: $blackcurrant-color;
+
+            line-height: 2.4rem;
+          }
+
+          li::before {
+            content: url('/src/images/check_icon.png');
+            list-style-position: inside;
+
+            position: relative;
+            top: 1rem;
+          }
+        }
+
+        p {
+          font-size: 1.6rem;
+          text-align: justify;
+          line-height: 2.4rem;
+        }
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: $blackcurrant-color;
+      }
+
+      .swiper-button-next {
+        right: 0rem;
+      }
+
+      .swiper-button-prev {
+        left: 0rem;
+      }
+    }
+  }
+
+  .home-page__quizzes-theme {
+    @include modal-quiz-theme;
+
+    &.home-page__quizzes-theme--active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .quizzes-theme__close-button {
+      @include close-modal-button;
+    }
+
+    .quizzes-theme__list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      padding: 1.8rem;
+
+      li {
+        cursor: pointer;
+        background: $aliceblue-color;
+        border-radius: 5px;
+
+        width: 16rem;
+
+        display: flex;
+        padding: 1rem;
+
+        a {
+          @include d-flex-center;
+
+          color: $blackcurrant-color;
+
+          margin: auto;
+
+          flex-direction: column;
+          gap: 1rem;
+
+          img {
+            filter: drop-shadow(0 0.7rem 0.4rem $shadow-color);
+
+            width: 6rem;
+
+            transform: scale(1);
+            transition: 0.6s ease-in-out;
+          }
+
+          &:active > img {
+            filter: drop-shadow(0 0.4rem 0.4rem #000);
+            transform: scale(0.9);
+            transition: none;
+          }
+
+          span {
+            font-size: 2.6rem;
+            font-weight: bold;
+          }
+        }
+
+        &:not(:hover) {
+          filter: none;
+        }
+      }
+
+      &:hover li:not(:hover) {
+        filter: blur(2px);
+        opacity: 0.5;
+      }
+    }
+  }
+}

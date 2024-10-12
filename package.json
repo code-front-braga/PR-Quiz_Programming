@@ -4,7 +4,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "scss": "sass src/scss/main.scss src/css/main.css"
   },
   "keywords": [],
   "author": "",

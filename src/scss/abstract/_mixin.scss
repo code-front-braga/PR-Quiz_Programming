@@ -1,7 +1,10 @@
-@mixin d-flex-center {
+@mixin d-flex-center($justifyContent, $flexDirection, $alignItens, $gap, $padding) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
+  align-items: $alignItens;
+  gap: $gap;
+  padding: $padding;
 }
 
 @mixin theme($backgroundColor, $textColor) {
@@ -10,10 +13,10 @@
 }
 
 @mixin pageConfig {
+  min-height: calc(100vh - 6.56rem);
+
   position: relative;
   top: 6.56rem;
-
-  min-height: calc(100vh - 6.56rem);
 
   display: flex;
   padding: 1.8rem;
@@ -47,13 +50,16 @@
   -webkit-box-shadow: 0px 21px 49px 4px $shadow-color;
   -moz-box-shadow: 0px 21px 49px 4px $shadow-color;
   box-shadow: 0px 21px 49px 4px $shadow-color;
+  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+
   display: flex;
   flex-direction: column;
-  transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   z-index: 3;
 }
 

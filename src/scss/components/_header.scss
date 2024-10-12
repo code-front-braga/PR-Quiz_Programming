@@ -4,31 +4,25 @@
 
 #header {
   @include theme($blackcurrant-color, $aliceblue-color);
-
-  position: fixed;
+  @include d-flex-center(initial, initial, initial, 0, 0.6rem 3.2rem);
 
   width: 100%;
 
-  display: flex;
-  padding: 0.6rem 3.2rem;
+  position: fixed;
 
   z-index: 2;
 
   .header__container {
-    @include d-flex-center;
+    @include d-flex-center(space-between, initial, initial, 0, 0);
 
     width: 100%;
 
-    justify-content: space-between;
-
     .header__container-link-github {
-      @include d-flex-center;
-
-      gap: 1rem;
+      @include d-flex-center(center, initial, center, 1rem, 0);
 
       .link-github__span {
         color: $aliceblue-color;
-        
+
         font-size: 1.6rem;
         font-weight: normal;
       }
@@ -39,17 +33,15 @@
     }
 
     .header__container-quiz-logo-container {
-      @include d-flex-center;
+      @include d-flex-center(center, initial, center, 1.4rem, 0);
 
       position: relative;
       right: calc(50% - 9.2rem);
 
-      gap: 1.4rem;
-
       .open-quiz-button {
         position: relative;
 
-        @include d-flex-center;
+        @include d-flex-center(center, initial, center, 0, 0);
 
         #quiz-logo-main-img,
         #quiz-logo-hovered-img {

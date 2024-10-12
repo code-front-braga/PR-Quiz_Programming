@@ -12,15 +12,13 @@
 
     .circle {
       @include position-absolute-center;
+      @include d-flex-center(initial, initial, baseline, 0, 0);
 
       background: transparent;
       border-radius: 50%;
 
       width: 50px;
       height: 50px;
-
-      display: flex;
-      align-items: baseline;
 
       span {
         color: $chinook-color;
@@ -39,39 +37,28 @@
 
   .quiz-page__container {
     @include pagesContainer($selago-color, $shadow-color);
-    @include d-flex-center;
-
-    position: relative;
+    @include d-flex-center(center, initial, center, 1.4rem, 2.2rem);
 
     height: 60rem;
 
-    gap: 1.4rem;
-    padding: 2.2rem;
+    position: relative;
 
     .quiz-page__question-container {
+      @include d-flex-center(initial, column, initial, 0, 1.4rem);
+
       background: #00000022;
       border-radius: 5px;
 
       width: 60%;
       height: 100%;
 
-      display: flex;
-      flex-direction: column;
-      padding: 1.4rem;
-
       .question-container__question {
-        @include d-flex-center;
+        @include d-flex-center(center, column, center, 2rem, 1.4rem);
 
         height: 100%;
 
-        flex-direction: column;
-        gap: 2rem;
-        padding: 1.4rem;
-
         ul.question__response-options-container {
-          display: flex;
-          flex-direction: column;
-          gap: 1.8rem;
+          @include d-flex-center(initial, column, initial, 1.8rem, 0);
 
           li.response-options-container__option {
             @include theme($blackcurrant-color, $chinook-color);
@@ -112,6 +99,8 @@
       }
     }
     .quiz-page__result-container {
+      @include d-flex-center(initial, column, initial, 2rem, 1.4rem);
+
       background: #00000022;
       border-radius: 5px;
       box-shadow: 0 0 0.4rem $shadow-color;
@@ -122,19 +111,12 @@
       width: 40%;
       height: 100%;
 
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 1.4rem;
-
       &.quiz-page__result-container--active {
         @include is-visible;
       }
 
       .quiz-page__question-result-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1.8rem;
+        @include d-flex-center(initial, column, initial, 1.8rem, 0);
 
         .user-response,
         .correct-response,
@@ -161,9 +143,7 @@
       }
     }
     .quiz-page__guidelines-container {
-      &.quiz-page__guidelines-container--active {
-        @include is-not-visible;
-      }
+      @include d-flex-center(space-evenly, column, initial, 0, 2.4rem);
 
       background: $chinook-color;
       border: 0.2rem solid $blackcurrant-color;
@@ -181,10 +161,9 @@
       position: absolute;
       right: 2.2rem;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      padding: 2.4rem;
+      &.quiz-page__guidelines-container--active {
+        @include is-not-visible;
+      }
 
       h2 {
         color: $blackcurrant-color;

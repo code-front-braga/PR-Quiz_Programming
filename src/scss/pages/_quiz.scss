@@ -10,7 +10,7 @@
 
     background: #00000099;
 
-    .circle {
+    .quiz-page__score-container__circle {
       @include position-absolute-center;
       @include d-flex-center(initial, initial, baseline, 0, 0);
 
@@ -21,9 +21,8 @@
       height: 50px;
 
       span {
-        color: $chinook-color;
-
-        font-size: 4rem;
+        @include theme(none, $chinook-color);
+        @include set-typography($tertiary-font, 4rem, initial, initial, initial);
       }
 
       img {
@@ -52,35 +51,37 @@
       width: 60%;
       height: 100%;
 
-      .question-container__question {
+      .quiz-page__question-container__question {
         @include d-flex-center(center, column, center, 2rem, 1.4rem);
 
         height: 100%;
 
-        ul.question__response-options-container {
+        ul.quiz-page__question-container__response-options-container {
           @include d-flex-center(initial, column, initial, 1.8rem, 0);
 
-          li.response-options-container__option {
+          li.quiz-page__question-container__response-options-container__option {
             @include theme($blackcurrant-color, $chinook-color);
+            @include set-typography($secondary-font, 1.6rem, initial, justify, initial);
 
             cursor: pointer;
             border-radius: 5px;
 
             padding: 1.2rem;
 
-            &.response-options-container__option--is-correct {
+            &.option--is-correct {
               @include theme($blackcurrant-color, $chinook-color);
             }
 
-            &.response-options-container__option--is-wrong {
+            &.option--is-wrong {
               @include theme($alert-color, $blackcurrant-color);
             }
           }
         }
       }
 
-      .question-container__next-question-button {
+      .quiz-page__question-container__next-question-button {
         @include theme($blackcurrant-color, $chinook-color);
+        @include set-typography($tertiary-font, 2rem, initial, initial, initial);
 
         border-radius: 5px;
         box-shadow: 0 0 0.4rem $shadow-color;
@@ -98,6 +99,7 @@
         }
       }
     }
+
     .quiz-page__result-container {
       @include d-flex-center(initial, column, initial, 2rem, 1.4rem);
 
@@ -111,37 +113,36 @@
       width: 40%;
       height: 100%;
 
-      &.quiz-page__result-container--active {
+      &.result-container--active {
         @include is-visible;
       }
 
       .quiz-page__question-result-container {
         @include d-flex-center(initial, column, initial, 1.8rem, 0);
 
-        .user-response,
-        .correct-response,
-        .explanation-text {
-          font-size: 1.6rem;
-          line-height: 2.8rem;
+        .quiz-page__question-result-container__user-response,
+        .quiz-page__question-result-container__correct-response {
+          @include theme(none, $blackcurrant-color);
+          @include set-typography($primary-font, 1.6rem, initial, initial, 2.8rem);
         }
 
-        .user-response__result,
-        .correct-response__result {
+        .quiz-page__question-result-container__user-response__result,
+        .quiz-page__question-result-container__correct-response__result {
           @include theme($blackcurrant-color, $aliceblue-color);
+          @include set-typography($tertiary-font, inherit, normal, inherit, inherit);
 
           border-radius: 2.5px;
-
-          font-weight: normal;
 
           padding: 0.4rem;
         }
 
-        .explanation-paragraph {
-          font-size: 1.64rem;
-          text-align: justify;
+        .quiz-page__question-result-container__explanation-paragraph {
+          @include theme(none, $blackcurrant-color);
+          @include set-typography($tertiary-font, 1.6rem, initial, justify, initial);
         }
       }
     }
+
     .quiz-page__guidelines-container {
       @include d-flex-center(space-evenly, column, initial, 0, 2.4rem);
 
@@ -161,21 +162,18 @@
       position: absolute;
       right: 2.2rem;
 
-      &.quiz-page__guidelines-container--active {
+      &.guidelines-container--active {
         @include is-not-visible;
       }
 
-      h2 {
-        color: $blackcurrant-color;
-
-        font-size: 2.8rem;
+      .quiz-page__guidelines-container__title {
+        @include theme(none, $blackcurrant-color);
+        @include set-typography($tertiary-font, 3.2rem, initial, initial, initial);
       }
 
-      .guidelines-container__guidelines-list li {
-        color: $blackcurrant-color;
-
-        font-weight: bold;
-        line-height: 4rem;
+      .quiz-page__guidelines-container__list-item {
+        @include theme(none, $blackcurrant-color);
+        @include set-typography($secondary-font, 1.8rem, bold, justify, 4rem);
 
         &::before {
           content: '☑️';
@@ -183,8 +181,109 @@
         }
       }
 
-      &:last-child {
-        font-size: 4rem;
+      .quiz-page__guidelines-container__good-luck {
+        @include theme(none, $blackcurrant-color);
+        @include set-typography($tertiary-font, 4rem, initial, initial, initial);
+      }
+    }
+  }
+
+  .quiz-page__result-button {
+    @include position-absolute-center;
+    @include theme($blackcurrant-color, $chinook-color);
+    @include set-typography($tertiary-font, 2rem, initial, initial, initial);
+
+    border-radius: 5px;
+    box-shadow: 0 0 2rem $shadow-color;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s ease-in-out;
+
+    width: 12vw;
+    height: 6rem;
+
+    z-index: 2;
+
+    &.result-button--active {
+      @include is-visible;
+    }
+  }
+
+  .quiz-page__score-container {
+    @include position-absolute-center;
+    @include d-flex-center(initial, column, initial, 4rem, 1.8rem 3rem);
+    @include theme($blackcurrant-color, $aliceblue-color);
+
+    border-radius: 1rem;
+    border: 0.2rem solid $aliceblue-color;
+    -webkit-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+    -moz-box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+    box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    z-index: 10;
+
+    .quiz-page__score-container__close-button {
+      @include d-flex-center(initial, initial, initial, 0, 0);
+
+      cursor: pointer;
+      background: $blackcurrant-color;
+      border: none;
+      border-radius: 20px 20px 20px 4px;
+      -webkit-box-shadow: 9px 13px 24px 1px $shadow-color;
+      -moz-box-shadow: 9px 13px 24px 1px $shadow-color;
+      box-shadow: 9px 13px 24px 1px $shadow-color;
+
+      position: absolute;
+      top: -4.4rem;
+      right: -4.4rem;
+
+      display: flex;
+
+      img {
+        width: 4.6rem;
+
+        margin: auto;
+      }
+    }
+
+    .quiz-page__score-container__text-content {
+      @include d-flex-center(initial, column, center, 1rem, 0);
+
+      &.quiz-page__score-container__text-content--1 {
+        h2 {
+          @include theme(none, $chinook-color);
+          @include set-typography($tertiary-font, 4rem, initial, initial, initial);
+        }
+
+        h3 {
+          @include set-typography($tertiary-font, 3.4rem, initial, initial, initial);
+        }
+      }
+
+      &.quiz-page__score-container__text-content--2 {
+        h2 {
+          @include set-typography($tertiary-font, 2.8rem, initial, initial, initial);
+        }
+
+        h3 {
+          @include set-typography($tertiary-font, 2.4rem, initial, initial, initial);
+        }
+      }
+
+      &.quiz-page__score-container__text-content--3 {
+        h2,
+        h3 {
+          @include set-typography($tertiary-font, 2.4rem, initial, initial, initial);
+        }
+      }
+
+      &.quiz-page__score-container__text-content--4 {
+        span {
+          @include set-typography($tertiary-font, 1.8rem, initial, initial, initial);
+        }
       }
     }
   }

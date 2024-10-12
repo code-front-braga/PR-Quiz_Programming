@@ -47,14 +47,14 @@ button {
 }
 
 #header {
-  background: #2b1135;
-  color: #f0f8ff;
   display: flex;
   justify-content: initial;
   flex-direction: initial;
   align-items: initial;
   gap: 0;
   padding: 0.6rem 3.2rem;
+  background: #2b1135;
+  color: #f0f8ff;
   width: 100%;
   position: fixed;
   z-index: 2;
@@ -68,7 +68,7 @@ button {
   padding: 0;
   width: 100%;
 }
-#header .header__container .header__container-link-github {
+#header .header__container .header__container__link-github {
   display: flex;
   justify-content: center;
   flex-direction: initial;
@@ -76,15 +76,19 @@ button {
   gap: 1rem;
   padding: 0;
 }
-#header .header__container .header__container-link-github .link-github__span {
+#header .header__container .header__container__link-github .header__container__link-github__text {
+  background: none;
   color: #f0f8ff;
-  font-size: 1.6rem;
-  font-weight: normal;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 1.4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
 }
-#header .header__container .header__container-link-github .link-github__my-logo {
+#header .header__container .header__container__link-github .header__container__link-github__logo {
   width: 4.6rem;
 }
-#header .header__container .header__container-quiz-logo-container {
+#header .header__container .header__container__quiz-logo-container {
   display: flex;
   justify-content: center;
   flex-direction: initial;
@@ -94,49 +98,59 @@ button {
   position: relative;
   right: calc(50% - 9.2rem);
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button {
-  position: relative;
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button {
   display: flex;
   justify-content: center;
   flex-direction: initial;
   align-items: center;
   gap: 0;
   padding: 0;
+  position: relative;
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-main-img,
-#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-hovered-img {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button #quiz-logo-main-img,
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button #quiz-logo-hovered-img {
   width: 3.6rem;
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-hovered-img {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button #quiz-logo-hovered-img {
   opacity: 0;
   visibility: hidden;
   transition: 0.7s ease-in-out;
   position: absolute;
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button #quiz-logo-hovered-img.quiz-logo-hovered-img--active {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button #quiz-logo-hovered-img.quiz-logo-hovered-img--active {
   opacity: 1;
   visibility: visible;
   filter: drop-shadow(0 0 2rem #8adea4);
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button .open-quiz-button__interrogation {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button .header__container__quiz-logo-container__open-quiz-button__interrogation {
+  background: none;
   color: #8adea4;
   font-family: "Afacad Flux", sans-serif;
   font-size: 4rem;
   font-weight: bold;
+  text-align: initial;
+  line-height: initial;
 }
-#header .header__container .header__container-quiz-logo-container .open-quiz-button .open-quiz-button__interrogation.open-quiz-button__interrogation--active {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__open-quiz-button .header__container__quiz-logo-container__open-quiz-button__interrogation.open-quiz-button__interrogation--active {
   color: #f0f8ff;
 }
-#header .header__container .header__container-quiz-logo-container :last-child {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__text {
+  background: none;
   color: #f0f8ff;
   font-family: "Poiret One", system-ui;
   font-size: 2.8rem;
-  font-weight: normal;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
 }
-#header .header__container .header__container-quiz-logo-container :last-child .header__container-quiz-logo-container__interrogation {
+#header .header__container .header__container__quiz-logo-container .header__container__quiz-logo-container__text .header__container__quiz-logo-container__text__interrogation {
+  background: none;
   color: #8adea4;
   font-family: "Afacad Flux", sans-serif;
+  font-size: 3.8rem;
   font-weight: bold;
+  text-align: initial;
+  line-height: initial;
 }
 
 #home-page {
@@ -172,10 +186,10 @@ button {
   gap: 0;
   padding: 0.6rem;
 }
-#home-page .home-page__container .container__figure {
+#home-page .home-page__container .home-page__container__figure-container {
   width: 50%;
 }
-#home-page .home-page__container .container__figure img {
+#home-page .home-page__container .home-page__container__figure-container img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -204,10 +218,12 @@ button {
 #home-page .home-page__container .swiper .swiper-slide h2 {
   background: #2b1135;
   color: #8adea4;
-  border-radius: 5px;
+  font-family: "Inter Tight", system-ui;
   font-size: 2.6rem;
   font-weight: normal;
+  text-align: initial;
   line-height: 2.4rem;
+  border-radius: 5px;
   padding: 0.6rem;
 }
 #home-page .home-page__container .swiper .swiper-slide ul {
@@ -219,7 +235,12 @@ button {
   padding: 0;
 }
 #home-page .home-page__container .swiper .swiper-slide ul li {
+  background: none;
   color: #2b1135;
+  font-family: "Inter Tight", system-ui;
+  font-size: 1.6rem;
+  font-weight: initial;
+  text-align: justify;
   line-height: 2.4rem;
 }
 #home-page .home-page__container .swiper .swiper-slide ul li::before {
@@ -228,13 +249,18 @@ button {
   position: relative;
   top: 1rem;
 }
-#home-page .home-page__container .swiper .swiper-slide p {
+#home-page .home-page__container .swiper .swiper-slide .swiper-slide__quiz-ready-text p {
+  background: none;
+  color: #2b1135;
+  font-family: "Afacad Flux", sans-serif;
   font-size: 1.6rem;
+  font-weight: initial;
   text-align: justify;
   line-height: 2.4rem;
 }
 #home-page .home-page__container .swiper .swiper-button-next,
 #home-page .home-page__container .swiper .swiper-button-prev {
+  background: none;
   color: #2b1135;
 }
 #home-page .home-page__container .swiper .swiper-button-next {
@@ -256,10 +282,10 @@ button {
   flex-direction: column;
   z-index: 3;
 }
-#home-page .home-page__quizzes-theme.home-page__quizzes-theme--active {
+#home-page .home-page__quizzes-theme.quizzes-theme--active {
   transform: translate(-50%, -50%) scale(1);
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__close-button {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__close-button {
   cursor: pointer;
   background: #2b1135;
   border: none;
@@ -270,17 +296,19 @@ button {
   right: -4.4rem;
   display: flex;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__close-button img {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__close-button img {
   width: 4.6rem;
   margin: auto;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   padding: 1.8rem;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list li {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list .home-page__quizzes-theme__container-list__list-item {
+  background: #f0f8ff;
+  color: none;
   display: flex;
   justify-content: center;
   flex-direction: initial;
@@ -288,38 +316,39 @@ button {
   gap: 0;
   padding: 1rem;
   cursor: pointer;
-  background: #f0f8ff;
   border-radius: 5px;
   width: 16rem;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list li a {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list .home-page__quizzes-theme__container-list__list-item a {
+  background: none;
+  color: #2b1135;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   padding: 0;
-  color: #2b1135;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: initial;
+  line-height: initial;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list li a img {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list .home-page__quizzes-theme__container-list__list-item a img {
   filter: drop-shadow(0 0.7rem 0.4rem rgba(0, 0, 0, 0.7490196078));
   transform: scale(1);
   transition: 0.6s ease-in-out;
   width: 6rem;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list li a:active > img {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list .home-page__quizzes-theme__container-list__list-item a:active > img {
   filter: drop-shadow(0 0.4rem 0.4rem #000);
   transform: scale(0.9);
   transition: none;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list li a span {
-  font-size: 2.6rem;
-  font-weight: bold;
-}
-#home-page .home-page__quizzes-theme .quizzes-theme__list li:not(:hover) {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list .home-page__quizzes-theme__container-list__list-item:not(:hover) {
   filter: none;
 }
-#home-page .home-page__quizzes-theme .quizzes-theme__list:hover li:not(:hover) {
+#home-page .home-page__quizzes-theme .home-page__quizzes-theme__container-list:hover li:not(:hover) {
   filter: blur(2px);
   opacity: 0.5;
 }
@@ -341,7 +370,7 @@ button {
   z-index: 2;
   background: rgba(0, 0, 0, 0.6);
 }
-#quiz-page .fade-score .circle {
+#quiz-page .fade-score .quiz-page__score-container__circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -357,11 +386,16 @@ button {
   width: 50px;
   height: 50px;
 }
-#quiz-page .fade-score .circle span {
+#quiz-page .fade-score .quiz-page__score-container__circle span {
+  background: none;
   color: #8adea4;
+  font-family: "Afacad Flux", sans-serif;
   font-size: 4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
 }
-#quiz-page .fade-score .circle img {
+#quiz-page .fade-score .quiz-page__score-container__circle img {
   width: 6rem;
 }
 #quiz-page .fade-score.fade-score--active {
@@ -395,7 +429,7 @@ button {
   width: 60%;
   height: 100%;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__question {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__question {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -404,7 +438,7 @@ button {
   padding: 1.4rem;
   height: 100%;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__question ul.question__response-options-container {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__question ul.quiz-page__question-container__response-options-container {
   display: flex;
   justify-content: initial;
   flex-direction: column;
@@ -412,34 +446,44 @@ button {
   gap: 1.8rem;
   padding: 0;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__question ul.question__response-options-container li.response-options-container__option {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__question ul.quiz-page__question-container__response-options-container li.quiz-page__question-container__response-options-container__option {
   background: #2b1135;
   color: #8adea4;
+  font-family: "Inter Tight", system-ui;
+  font-size: 1.6rem;
+  font-weight: initial;
+  text-align: justify;
+  line-height: initial;
   cursor: pointer;
   border-radius: 5px;
   padding: 1.2rem;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__question ul.question__response-options-container li.response-options-container__option.response-options-container__option--is-correct {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__question ul.quiz-page__question-container__response-options-container li.quiz-page__question-container__response-options-container__option.option--is-correct {
   background: #2b1135;
   color: #8adea4;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__question ul.question__response-options-container li.response-options-container__option.response-options-container__option--is-wrong {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__question ul.quiz-page__question-container__response-options-container li.quiz-page__question-container__response-options-container__option.option--is-wrong {
   background: #f55b50;
   color: #2b1135;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__next-question-button {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__next-question-button {
   background: #2b1135;
   color: #8adea4;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
   border-radius: 5px;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.7490196078);
   align-self: flex-end;
   padding: 1rem;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__next-question-button:disabled {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__next-question-button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
-#quiz-page .quiz-page__container .quiz-page__question-container .question-container__next-question-button:active {
+#quiz-page .quiz-page__container .quiz-page__question-container .quiz-page__question-container__next-question-button:active {
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.7490196078);
 }
 #quiz-page .quiz-page__container .quiz-page__result-container {
@@ -458,7 +502,7 @@ button {
   width: 40%;
   height: 100%;
 }
-#quiz-page .quiz-page__container .quiz-page__result-container.quiz-page__result-container--active {
+#quiz-page .quiz-page__container .quiz-page__result-container.result-container--active {
   opacity: 1;
   visibility: visible;
 }
@@ -470,23 +514,36 @@ button {
   gap: 1.8rem;
   padding: 0;
 }
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .user-response,
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .correct-response,
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .explanation-text {
+#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .quiz-page__question-result-container__user-response,
+#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .quiz-page__question-result-container__correct-response {
+  background: none;
+  color: #2b1135;
+  font-family: "Poiret One", system-ui;
   font-size: 1.6rem;
+  font-weight: initial;
+  text-align: initial;
   line-height: 2.8rem;
 }
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .user-response__result,
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .correct-response__result {
+#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .quiz-page__question-result-container__user-response__result,
+#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .quiz-page__question-result-container__correct-response__result {
   background: #2b1135;
   color: #f0f8ff;
-  border-radius: 2.5px;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: inherit;
   font-weight: normal;
+  text-align: inherit;
+  line-height: inherit;
+  border-radius: 2.5px;
   padding: 0.4rem;
 }
-#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .explanation-paragraph {
-  font-size: 1.64rem;
+#quiz-page .quiz-page__container .quiz-page__result-container .quiz-page__question-result-container .quiz-page__question-result-container__explanation-paragraph {
+  background: none;
+  color: #2b1135;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 1.6rem;
+  font-weight: initial;
   text-align: justify;
+  line-height: initial;
 }
 #quiz-page .quiz-page__container .quiz-page__guidelines-container {
   display: flex;
@@ -507,23 +564,158 @@ button {
   position: absolute;
   right: 2.2rem;
 }
-#quiz-page .quiz-page__container .quiz-page__guidelines-container.quiz-page__guidelines-container--active {
+#quiz-page .quiz-page__container .quiz-page__guidelines-container.guidelines-container--active {
   opacity: 0;
   visibility: hidden;
 }
-#quiz-page .quiz-page__container .quiz-page__guidelines-container h2 {
+#quiz-page .quiz-page__container .quiz-page__guidelines-container .quiz-page__guidelines-container__title {
+  background: none;
   color: #2b1135;
-  font-size: 2.8rem;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 3.2rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
 }
-#quiz-page .quiz-page__container .quiz-page__guidelines-container .guidelines-container__guidelines-list li {
+#quiz-page .quiz-page__container .quiz-page__guidelines-container .quiz-page__guidelines-container__list-item {
+  background: none;
   color: #2b1135;
+  font-family: "Inter Tight", system-ui;
+  font-size: 1.8rem;
   font-weight: bold;
+  text-align: justify;
   line-height: 4rem;
 }
-#quiz-page .quiz-page__container .quiz-page__guidelines-container .guidelines-container__guidelines-list li::before {
+#quiz-page .quiz-page__container .quiz-page__guidelines-container .quiz-page__guidelines-container__list-item::before {
   content: "☑️";
   list-style-position: inside;
 }
-#quiz-page .quiz-page__container .quiz-page__guidelines-container:last-child {
+#quiz-page .quiz-page__container .quiz-page__guidelines-container .quiz-page__guidelines-container__good-luck {
+  background: none;
+  color: #2b1135;
+  font-family: "Afacad Flux", sans-serif;
   font-size: 4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__result-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2b1135;
+  color: #8adea4;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+  border-radius: 5px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7490196078);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.7s ease-in-out;
+  width: 12vw;
+  height: 6rem;
+  z-index: 2;
+}
+#quiz-page .quiz-page__result-button.result-button--active {
+  opacity: 1;
+  visibility: visible;
+}
+#quiz-page .quiz-page__score-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: initial;
+  flex-direction: column;
+  align-items: initial;
+  gap: 4rem;
+  padding: 1.8rem 3rem;
+  background: #2b1135;
+  color: #f0f8ff;
+  border-radius: 1rem;
+  border: 0.2rem solid #f0f8ff;
+  box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem rgba(0, 0, 0, 0.7490196078);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 10;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__close-button {
+  display: flex;
+  justify-content: initial;
+  flex-direction: initial;
+  align-items: initial;
+  gap: 0;
+  padding: 0;
+  cursor: pointer;
+  background: #2b1135;
+  border: none;
+  border-radius: 20px 20px 20px 4px;
+  box-shadow: 9px 13px 24px 1px rgba(0, 0, 0, 0.7490196078);
+  position: absolute;
+  top: -4.4rem;
+  right: -4.4rem;
+  display: flex;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__close-button img {
+  width: 4.6rem;
+  margin: auto;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content {
+  display: flex;
+  justify-content: initial;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--1 h2 {
+  background: none;
+  color: #8adea4;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--1 h3 {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 3.4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--2 h2 {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2.8rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--2 h3 {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2.4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--3 h2,
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--3 h3 {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 2.4rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
+}
+#quiz-page .quiz-page__score-container .quiz-page__score-container__text-content.quiz-page__score-container__text-content--4 span {
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 1.8rem;
+  font-weight: initial;
+  text-align: initial;
+  line-height: initial;
 }/*# sourceMappingURL=main.css.map */

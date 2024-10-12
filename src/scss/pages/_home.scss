@@ -17,7 +17,7 @@
     @include pagesContainer(#00000025, $shadow-color);
     @include d-flex-center(center, initial, center, 0, 0.6rem);
 
-    .container__figure {
+    .home-page__container__figure-container {
       width: 50%;
 
       img {
@@ -43,12 +43,9 @@
 
         h2 {
           @include theme($blackcurrant-color, $chinook-color);
+          @include set-typography($secondary-font, 2.6rem, normal, initial, 2.4rem);
 
           border-radius: 5px;
-
-          font-size: 2.6rem;
-          font-weight: normal;
-          line-height: 2.4rem;
 
           padding: 0.6rem;
         }
@@ -57,29 +54,28 @@
           @include d-flex-center(center, column, center, 1rem, 0);
 
           li {
-            color: $blackcurrant-color;
+            @include theme(none, $blackcurrant-color);
+            @include set-typography($secondary-font, 1.6rem, initial, justify, 2.4rem);
 
-            line-height: 2.4rem;
-          }
+            &::before {
+              content: url('/src/images/check_icon.png');
+              list-style-position: inside;
 
-          li::before {
-            content: url('/src/images/check_icon.png');
-            list-style-position: inside;
-
-            position: relative;
-            top: 1rem;
+              position: relative;
+              top: 1rem;
+            }
           }
         }
 
-        p {
-          font-size: 1.6rem;
-          text-align: justify;
-          line-height: 2.4rem;
+        .swiper-slide__quiz-ready-text p {
+          @include theme(none, $blackcurrant-color);
+          @include set-typography($tertiary-font, 1.6rem, initial, justify, 2.4rem);
         }
       }
+
       .swiper-button-next,
       .swiper-button-prev {
-        color: $blackcurrant-color;
+        @include theme(none, $blackcurrant-color);
       }
 
       .swiper-button-next {
@@ -95,33 +91,39 @@
   .home-page__quizzes-theme {
     @include modal-quiz-theme;
 
-    &.home-page__quizzes-theme--active {
+    &.quizzes-theme--active {
       transform: translate(-50%, -50%) scale(1);
     }
 
-    .quizzes-theme__close-button {
+    .home-page__quizzes-theme__close-button {
       @include close-modal-button;
+
+      img {
+        width: 4.6rem;
+
+        margin: auto;
+      }
     }
 
-    .quizzes-theme__list {
+    .home-page__quizzes-theme__container-list {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 2rem;
       padding: 1.8rem;
 
-      li {
+      .home-page__quizzes-theme__container-list__list-item {
+        @include theme($aliceblue-color, none);
         @include d-flex-center(center, initial, center, 0, 1rem);
 
         cursor: pointer;
-        background: $aliceblue-color;
         border-radius: 5px;
 
         width: 16rem;
 
         a {
+          @include theme(none, $blackcurrant-color);
           @include d-flex-center(center, column, center, 1rem, 0);
-
-          color: $blackcurrant-color;
+          @include set-typography($tertiary-font, 2.6rem, bold, initial, initial);
 
           img {
             filter: drop-shadow(0 0.7rem 0.4rem $shadow-color);
@@ -135,11 +137,6 @@
             filter: drop-shadow(0 0.4rem 0.4rem #000);
             transform: scale(0.9);
             transition: none;
-          }
-
-          span {
-            font-size: 2.6rem;
-            font-weight: bold;
           }
         }
 

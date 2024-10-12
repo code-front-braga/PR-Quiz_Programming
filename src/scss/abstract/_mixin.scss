@@ -77,12 +77,6 @@
   right: -4.4rem;
 
   display: flex;
-
-  img {
-    width: 4.6rem;
-
-    margin: auto;
-  }
 }
 
 @mixin position-absolute-center {
@@ -100,4 +94,12 @@
 @mixin is-not-visible {
   opacity: 0;
   visibility: hidden;
+}
+
+@mixin set-typography($fontFamily, $fontSize, $fontWeight, $textAlign, $lineHeight) {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  text-align: $textAlign;
+  line-height: $lineHeight;
 }

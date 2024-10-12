@@ -3,8 +3,8 @@
 @import '../base/typography';
 
 #header {
-  @include theme($blackcurrant-color, $aliceblue-color);
   @include d-flex-center(initial, initial, initial, 0, 0.6rem 3.2rem);
+  @include theme($blackcurrant-color, $aliceblue-color);
 
   width: 100%;
 
@@ -17,31 +17,29 @@
 
     width: 100%;
 
-    .header__container-link-github {
+    .header__container__link-github {
       @include d-flex-center(center, initial, center, 1rem, 0);
 
-      .link-github__span {
-        color: $aliceblue-color;
-
-        font-size: 1.6rem;
-        font-weight: normal;
+      .header__container__link-github__text {
+        @include theme(none, $aliceblue-color);
+        @include set-typography($tertiary-font, 1.4rem, initial, initial, initial);
       }
 
-      .link-github__my-logo {
+      .header__container__link-github__logo {
         width: 4.6rem;
       }
     }
 
-    .header__container-quiz-logo-container {
+    .header__container__quiz-logo-container {
       @include d-flex-center(center, initial, center, 1.4rem, 0);
 
       position: relative;
       right: calc(50% - 9.2rem);
 
-      .open-quiz-button {
-        position: relative;
-
+      .header__container__quiz-logo-container__open-quiz-button {
         @include d-flex-center(center, initial, center, 0, 0);
+
+        position: relative;
 
         #quiz-logo-main-img,
         #quiz-logo-hovered-img {
@@ -62,12 +60,9 @@
           }
         }
 
-        .open-quiz-button__interrogation {
-          color: $chinook-color;
-
-          font-family: $tertiary-font;
-          font-size: 4rem;
-          font-weight: bold;
+        .header__container__quiz-logo-container__open-quiz-button__interrogation {
+          @include theme(none, $chinook-color);
+          @include set-typography($tertiary-font, 4rem, bold, initial, initial);
 
           &.open-quiz-button__interrogation--active {
             color: $aliceblue-color;
@@ -75,18 +70,13 @@
         }
       }
 
-      :last-child {
-        color: $aliceblue-color;
+      .header__container__quiz-logo-container__text {
+        @include theme(none, $aliceblue-color);
+        @include set-typography($primary-font, 2.8rem, initial, initial, initial);
 
-        font-family: $primary-font;
-        font-size: 2.8rem;
-        font-weight: normal;
-
-        .header__container-quiz-logo-container__interrogation {
-          color: $chinook-color;
-
-          font-family: $tertiary-font;
-          font-weight: bold;
+        .header__container__quiz-logo-container__text__interrogation {
+          @include theme(none, $chinook-color);
+          @include set-typography($tertiary-font, 3.8rem, bold, initial, initial);
         }
       }
     }

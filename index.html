@@ -25,22 +25,26 @@
 <body>
   <header id="header">
     <div class="header__container">
-      <a class="header__container-link-github" href="https://github.com/code-front-braga" target="_blank"
+      <a class="header__container__link-github" href="https://github.com/code-front-braga" target="_blank"
         aria-label="Abre uma nova aba para o GitHub do criador do site">
-        <span class="link-github__span animate__animated animate__bounceInDown">Developed by</span>
-        <img class="link-github__my-logo animate__animated animate__bounceInDown animate__delay-1s"
+        <span class="header__container__link-github__text animate__animated animate__bounceInDown">Developed by</span>
+        <img class="header__container__link-github__logo animate__animated animate__bounceInDown animate__delay-1s"
           src="./src/images/my-logo.svg" alt="Logo de Leonardo Braga: {lb.};">
       </a>
 
-      <div class="header__container-quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
-        <button class="open-quiz-button js-open-quiz-button" aria-label="Abre a janela com os temas">
-          <img id="quiz-logo-hovered-img" class="open-quiz-button__hovered-img" src="./src/images/q-hovered-icon.svg"
+      <div class="header__container__quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
+        <button class="header__container__quiz-logo-container__open-quiz-button js-open-quiz-button"
+          aria-label="Abre a janela com os temas">
+          <img id="quiz-logo-hovered-img" class="header__container__quiz-logo-container__open-quiz-button__hovered-img"
+            src="./src/images/q-hovered-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor verde e a interrogação tem cor branca">
-          <img id="quiz-logo-main-img" class="open-quiz-button__main-img" src="./src/images/q-main-icon.svg"
+          <img id="quiz-logo-main-img" class="header__container__quiz-logo-container__open-quiz-button__main-img"
+            src="./src/images/q-main-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor branca e a interrogação tem cor verde">
-          <span class="open-quiz-button__interrogation">¿</span>
+          <span class="header__container__quiz-logo-container__open-quiz-button__interrogation">¿</span>
         </button>
-        <h2>devQu<span class="header__container-quiz-logo-container__interrogation">¿</span>zzes</h2>
+        <span class="header__container__quiz-logo-container__text">devQu<span
+            class="header__container__quiz-logo-container__text__interrogation">¿</span>zzes</span>
       </div>
     </div>
   </header>
@@ -49,7 +53,7 @@
     <div class="home-page__fade"></div>
 
     <div class="home-page__container animate__animated animate__bounceInLeft animate__delay-1s">
-      <figure class="container__figure">
+      <figure class="home-page__container__figure-container">
         <img src="./src/images/bg-main.png"
           alt="Uma ilustração de um programador sentado na cadeira com três telas na sua frente.">
       </figure>
@@ -57,10 +61,10 @@
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <h2 class="swiper-slide__quiz-importance-question">Por que os quizzes são tão importantes?</h2>
+            <h2 class="swiper-slide__question-text">Por que os quizzes são tão importantes?</h2>
 
-            <ul class="swiper-slide__quiz-importance-list">
-              <li>
+            <ul class="swiper-slide__quiz-importance-container-list">
+              <li class="swiper-slide__quiz-importance-container-list__list-item">
                 <strong>Avaliação Real das Habilidades:</strong>
                 Os quizzes permitem avaliar de forma prática e
                 objetiva o conhecimento e
@@ -68,7 +72,7 @@
                 demonstra sua capacidade de aplicar conceitos teóricos na prática.
               </li>
 
-              <li>
+              <li class="swiper-slide__quiz-importance-container-list__list-item">
                 <strong>Preparação para Entrevistas:</strong>
                 Muitas empresas utilizam quizzes como parte do
                 processo seletivo. Ao se
@@ -77,7 +81,7 @@
                 técnicas e se destacar perante os demais candidatos.
               </li>
 
-              <li>
+              <li class="swiper-slide__quiz-importance-container-list__list-item">
                 <strong>Identificação de Pontos Fortes e Fracos:</strong>
                 Os quizzes ajudam a identificar quais
                 áreas do conhecimento
@@ -86,7 +90,7 @@
                 tópicos que apresentam mais dificuldades.
               </li>
 
-              <li>
+              <li class="swiper-slide__quiz-importance-container-list__list-item">
                 <strong>Desenvolvimento de Lógica de Programação:</strong>
                 A resolução de problemas propostos nos
                 quizzes exige um
@@ -94,7 +98,7 @@
                 fundamental para qualquer programador.
               </li>
 
-              <li>
+              <li class="swiper-slide__quiz-importance-container-list__list-item">
                 <strong>Aumento da Confiança:</strong>
                 Ao resolver quizzes com sucesso, o programador ganha
                 confiança em suas habilidades e
@@ -152,75 +156,75 @@
     </div>
 
     <div class="home-page__quizzes-theme">
-      <button class="quizzes-theme__close-button" aria-label="Fecha a janela dos temas">
+      <button class="home-page__quizzes-theme__close-button" aria-label="Fecha a janela dos temas">
         <img src="./src/images/close_icon.svg" alt="Imagem de um X">
       </button>
 
-      <ul class="quizzes-theme__list">
-        <li>
+      <ul class="home-page__quizzes-theme__container-list">
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre JAVASCRIPT">
             <img src="./src/images/js_icon.svg" alt="Símbolo JavaScript">
             <span>JavaScript</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre HTML">
             <img src="./src/images/html_icon.svg" alt="Símbolo HTML">
             <span>HTML</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre CSS">
             <img src="./src/images/css_icon.svg" alt="Símbolo CSS">
             <span>CSS</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre REACT">
             <img src="./src/images/react_icon.svg" alt="Símbolo REACT">
             <span>ReactJS</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre ANGULAR">
             <img src="./src/images/angular_icon.svg" alt="Símbolo ANGULAR">
             <span>Angular</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre NODEJS">
             <img src="./src/images/node_icon.svg" alt="Símbolo NODEJS">
             <span>NodeJS</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre FRONTEND">
             <img src="./src/images/frontend_icon.svg" alt="Símbolo FRONTEND">
             <span>FrontEnd</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre JAVA">
             <img src="./src/images/java_icon.svg" alt="Símbolo JAVA">
             <span>Java</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre PYTHON">
             <img src="./src/images/python_icon.svg" alt="Símbolo PYTHON">
             <span>Python</span>
           </a>
         </li>
 
-        <li>
+        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
           <a aria-label="Abre o quiz sobre BACKEND">
             <img src="./src/images/backend_icon.svg" alt="Símbolo BACKEND">
             <span>BackEnd</span>

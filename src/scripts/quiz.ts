@@ -1,5 +1,5 @@
 import { IQuizThemeProps, IScoreResultProps } from './interfaces.js';
-import { EScoreMessage } from './enum.js';
+import { EQuizThemeName, EScoreMessage } from './enum.js';
 import {
   angularTheme,
   backendTheme,
@@ -17,13 +17,11 @@ import { evaluateResponse, scorePercentual } from './utils.quiz.js';
 import { addClassList, removeClassList } from './common.utils.js';
 
 const ulResponseOptionsContainer = document.querySelector('.js-response-options-container') as HTMLUListElement;
-const divGuidelinesContainer = document.querySelector('.js-guidelines-container') as HTMLDivElement;
 const btnNextQuestion = document.querySelector('.js-next-question-button') as HTMLButtonElement;
 const btnQuizScore = document.querySelector('.js-open-score-button') as HTMLButtonElement;
 const btnCloseQuizScore = document.querySelector('.js-close-score-button') as HTMLButtonElement;
 const divQuizFade = document.querySelector('.js-quiz-fade') as HTMLDivElement;
 const divResponseDetailsContainer = document.querySelector('.js-details-container') as HTMLDivElement;
-
 const aBackHomeLink = document.querySelector('.js-back-home-link') as HTMLLinkElement;
 
 let currentQuizTheme: IQuizThemeProps[] = [];
@@ -103,7 +101,7 @@ const renderResponseDetailsContainer = (selectedOption: HTMLLIElement) => {
 
 const saveCompletedTheme = (theme: string | null) => {
   if (!theme) return;
- const storedThemes = localStorage.getItem('completedThemes');
+  const storedThemes = localStorage.getItem('completedThemes');
   const completedThemes = storedThemes ? JSON.parse(storedThemes) : [];
   if (!completedThemes.includes(theme)) {
     completedThemes.push(theme);
@@ -116,6 +114,8 @@ const handleResponseSelection = (
   selectedResponse: HTMLLIElement,
   correctResponseText: string,
 ) => {
+  const divGuidelinesContainer = document.querySelector('.js-guidelines-container') as HTMLDivElement;
+
   liOptionResponses.forEach(unselectedOption => {
     if (unselectedOption !== selectedResponse) unselectedOption.style.pointerEvents = 'none';
     selectedResponse.style.pointerEvents = 'none';
@@ -183,14 +183,6 @@ const advanceToNextQuestion = () => {
   }
 };
 
-btnNextQuestion.addEventListener('click', advanceToNextQuestion);
-btnQuizScore.addEventListener('click', showScoreResult);
-btnCloseQuizScore.addEventListener('click', hideScoreResult);
-
-aBackHomeLink.addEventListener('click', () => {
-  saveCompletedTheme(theme);
-});
-
 const getThemeFromURL = () => {
   const params = new URLSearchParams(window.location.search);
   return params.get('theme');
@@ -199,53 +191,53 @@ const getThemeFromURL = () => {
 const theme = getThemeFromURL();
 
 const setQuizThemeAndRender = () => {
-  let themeTitle = window.document.title;
+  let themeTitle = '';
 
   switch (theme) {
     case 'javascript':
       currentQuizTheme = javaScriptTheme;
-      themeTitle = 'JavaScript';
+      themeTitle = EQuizThemeName.JAVASCRIPT;
       break;
     case 'html':
       currentQuizTheme = htmlTheme;
-      themeTitle = 'HTML';
+      themeTitle = EQuizThemeName.HTML;
       break;
     case 'css':
       currentQuizTheme = cssTheme;
-      themeTitle = 'CSS';
+      themeTitle = EQuizThemeName.CSS;
       break;
     case 'reactjs':
       currentQuizTheme = reactTheme;
-      themeTitle = 'ReactJS';
+      themeTitle = EQuizThemeName.REACT_JS;
       break;
     case 'angular':
       currentQuizTheme = angularTheme;
-      themeTitle = 'Angular';
+      themeTitle = EQuizThemeName.ANGULAR;
       break;
     case 'nodejs':
       currentQuizTheme = nodeJsTheme;
-      themeTitle = 'NodeJS';
+      themeTitle = EQuizThemeName.NODE_JS;
       break;
     case 'frontend':
       currentQuizTheme = frontendTheme;
-      themeTitle = 'FrontEnd';
+      themeTitle = EQuizThemeName.FRONT_END;
       break;
     case 'java':
       currentQuizTheme = javaTheme;
-      themeTitle = 'Java';
+      themeTitle = EQuizThemeName.JAVA;
       break;
     case 'python':
       currentQuizTheme = pythonTheme;
-      themeTitle = 'Python';
+      themeTitle = EQuizThemeName.PYTHON;
       break;
     case 'backend':
       currentQuizTheme = backendTheme;
-      themeTitle = 'BackEnd';
+      themeTitle = EQuizThemeName.BACK_END;
       break;
     default:
       throw new Error('Não existe esse tema');
   }
-  return themeTitle;
+  document.title = themeTitle;
 };
 
 const createLiElement = (selectedResponseText: string, correctResponseText: string) => {
@@ -261,23 +253,28 @@ const createLiElement = (selectedResponseText: string, correctResponseText: stri
 const scoreResult: IScoreResultProps = {
   score: 0,
   conditions: score => {
-    const scoreText = document.querySelector('.js-score-text') as HTMLElement;
+    const h2ScoreText = document.querySelector('.js-score-text') as HTMLHeadingElement;
     switch (true) {
       case score < 3:
-        scoreText.textContent = EScoreMessage.VeryLowGrade;
+        h2ScoreText.textContent = EScoreMessage.VERY_LOW_GRADE;
         break;
       case score < 6:
-        scoreText.textContent = EScoreMessage.LowGrade;
+        h2ScoreText.textContent = EScoreMessage.LOW_GRADE;
         break;
       case score < 9:
-        scoreText.textContent = EScoreMessage.GoodGrade;
+        h2ScoreText.textContent = EScoreMessage.GOOD_GRADE;
         break;
       default:
-        scoreText.textContent = EScoreMessage.PerfectGrade;
+        h2ScoreText.textContent = EScoreMessage.PERFECT_GRADE;
         break;
     }
     return ++scoreResult.score;
   },
 };
+
+btnNextQuestion.addEventListener('click', advanceToNextQuestion);
+btnQuizScore.addEventListener('click', showScoreResult);
+btnCloseQuizScore.addEventListener('click', hideScoreResult);
+aBackHomeLink.addEventListener('click', () => saveCompletedTheme(theme));
 
 initQuizTheme();

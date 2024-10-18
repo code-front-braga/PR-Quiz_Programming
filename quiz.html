@@ -328,7 +328,7 @@
       <div class="quiz-page__guidelines-container js-guidelines-container">
         <h2 class="quiz-page__guidelines-container__title js-guidelines-title">Olá! Fique atento às orientações:</h2>
         <ul class="quiz-page__guidelines-container__list">
-          <li class="quiz-page__guidelines-container__list-item js-guidelines-list-item">Esse quiz contém <span 
+          <li class="quiz-page__guidelines-container__list-item js-guidelines-list-item">Esse quiz contém <span
               class="quiz-page__guidelines-container__list-item__questions-quantity js-questions-quantity"></span>
             questões</li>
           <li class="quiz-page__guidelines-container__list-item js-guidelines-list-item">Cada questão possui <span
@@ -384,31 +384,7 @@
   </section>
 
   <script type="module" src="/dist/js/quiz.js"></script>
-  <script>
-    function randomValues() {
-      anime({
-        targets: '.square, .circle, .triangle',
-        translateX: function () {
-          return anime.random(-700, 700);
-        },
-        translateY: function () {
-          return anime.random(-300, 300);
-        },
-        rotate: function () {
-          return anime.random(0, 360);
-        },
-        scale: function () {
-          return anime.random(.2, 2);
-        },
-        duration: 1000,
-        easing: 'easeInOutQuad',
-        complete: randomValues,
-      });
-    }
-    window.onload = function () {
-      randomValues();
-    };
-  </script>
+  <script src="/src/scripts/animate.background.js"></script>
 </body>
 
 </html>

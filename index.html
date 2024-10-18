@@ -13,6 +13,7 @@
 
   <!-- Animações -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,24 +34,27 @@
       </a>
 
       <div class="header__container__quiz-logo-container animate__animated animate__fadeInLeft animate-duration-3s">
-        <button class="header__container__quiz-logo-container__open-quiz-button js-open-quiz-button"
-          aria-label="Abre a janela com os temas">
-          <img id="quiz-logo-hovered-img" class="header__container__quiz-logo-container__open-quiz-button__hovered-img"
+        <button
+          class="header__container__quiz-logo-container__open-quiz-themes-button js-open-quiz-themes-button animate__animated animate__pulse animate__infinite animate__faster"
+          aria-label="Abre a janela com os temas" title="Vamos começar?">
+          <img id="quiz-logo-hovered-img"
+            class="header__container__quiz-logo-container__open-quiz-themes-button__hovered-img js-quiz-logo-hovered"
             src="./src/images/q-hovered-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor verde e a interrogação tem cor branca">
-          <img id="quiz-logo-main-img" class="header__container__quiz-logo-container__open-quiz-button__main-img"
+          <img id="quiz-logo-main-img" class="header__container__quiz-logo-container__open-quiz-themes-button__main-img"
             src="./src/images/q-main-icon.svg"
             alt="Letra Q com uma interrogação de cabeça para baixo. A letra Q tem cor branca e a interrogação tem cor verde">
-          <span class="header__container__quiz-logo-container__open-quiz-button__interrogation">¿</span>
+          <span
+            class="header__container__quiz-logo-container__open-quiz-themes-button__interrogation js-interrogation-text ">¿</span>
         </button>
         <span class="header__container__quiz-logo-container__text">devQu<span
-            class="header__container__quiz-logo-container__text__interrogation">¿</span>zzes</span>
+            class="header__container__quiz-logo-container__text__interrogation animate__animated animate__swing animate__infinite animate__slow animate__delay-1s">¿</span>zzes</span>
       </div>
     </div>
   </header>
 
   <section id="home-page">
-    <div class="home-page__fade"></div>
+    <div class="home-page__fade js-home-page-fade"></div>
 
     <div class="home-page__container animate__animated animate__bounceInLeft animate__delay-1s">
       <figure class="home-page__container__figure-container">
@@ -155,86 +159,131 @@
       </div>
     </div>
 
-    <div class="home-page__quizzes-theme">
-      <button class="home-page__quizzes-theme__close-button" aria-label="Fecha a janela dos temas">
+    <div class="home-page__quiz-themes js-quiz-themes">
+      <button class="home-page__quiz-themes__close-button js-close-quiz-themes-button"
+        aria-label="Fecha a janela dos temas">
         <img src="./src/images/close_icon.svg" alt="Imagem de um X">
       </button>
 
-      <ul class="home-page__quizzes-theme__container-list">
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+      <ul class="home-page__quiz-themes__container-list">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="javascript">
           <a aria-label="Abre o quiz sobre JAVASCRIPT">
             <img src="./src/images/js_icon.svg" alt="Símbolo JavaScript">
             <span>JavaScript</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="html">
           <a aria-label="Abre o quiz sobre HTML">
             <img src="./src/images/html_icon.svg" alt="Símbolo HTML">
             <span>HTML</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="css">
           <a aria-label="Abre o quiz sobre CSS">
             <img src="./src/images/css_icon.svg" alt="Símbolo CSS">
             <span>CSS</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="reactjs">
           <a aria-label="Abre o quiz sobre REACT">
             <img src="./src/images/react_icon.svg" alt="Símbolo REACT">
             <span>ReactJS</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="angular">
           <a aria-label="Abre o quiz sobre ANGULAR">
             <img src="./src/images/angular_icon.svg" alt="Símbolo ANGULAR">
             <span>Angular</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="nodejs">
           <a aria-label="Abre o quiz sobre NODEJS">
             <img src="./src/images/node_icon.svg" alt="Símbolo NODEJS">
             <span>NodeJS</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="frontend">
           <a aria-label="Abre o quiz sobre FRONTEND">
             <img src="./src/images/frontend_icon.svg" alt="Símbolo FRONTEND">
             <span>FrontEnd</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="java">
           <a aria-label="Abre o quiz sobre JAVA">
             <img src="./src/images/java_icon.svg" alt="Símbolo JAVA">
             <span>Java</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="python">
           <a aria-label="Abre o quiz sobre PYTHON">
             <img src="./src/images/python_icon.svg" alt="Símbolo PYTHON">
             <span>Python</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
 
-        <li class="home-page__quizzes-theme__container-list__list-item js-open-quiz-theme">
+        <li class="home-page__quiz-themes__container-list__list-item js-open-quiz-theme" data-theme="backend">
           <a aria-label="Abre o quiz sobre BACKEND">
             <img src="./src/images/backend_icon.svg" alt="Símbolo BACKEND">
             <span>BackEnd</span>
           </a>
+          <div class="is-theme__situation">
+            <img class="is-theme__situation__img-checked js-img-theme-checked" src="/src/images/theme_checked.svg" alt="">
+            <img class="is-theme__situation__img-unchecked js-img-theme-unchecked" src="/src/images/theme_unchecked.svg" alt="">
+          </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <script type="module" src="dist/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./src/scripts/swiper.js"></script>
+
+  <script type="module" src="dist/js/home.js"></script>
+  
 </body>
 
 </html>

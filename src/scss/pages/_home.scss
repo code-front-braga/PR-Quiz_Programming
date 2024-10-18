@@ -3,7 +3,7 @@
 @import '../base/typography';
 
 #home-page {
-  @include pageConfig;
+  @include pageConfig(6.56rem);
 
   .home-page__fade {
     @include fade(#ffffff95);
@@ -43,7 +43,7 @@
 
         h2 {
           @include theme($blackcurrant-color, $chinook-color);
-          @include set-typography($secondary-font, 2.6rem, normal, initial, 2.4rem);
+          @include set-typography($secondary-font, 2rem, normal, initial, 2.4rem);
 
           border-radius: 5px;
 
@@ -69,7 +69,7 @@
 
         .swiper-slide__quiz-ready-text p {
           @include theme(none, $blackcurrant-color);
-          @include set-typography($tertiary-font, 1.6rem, initial, justify, 2.4rem);
+          @include set-typography($secondary-font, 1.6rem, initial, justify, 2.4rem);
         }
       }
 
@@ -88,14 +88,15 @@
     }
   }
 
-  .home-page__quizzes-theme {
+  .home-page__quiz-themes {
     @include modal-quiz-theme;
 
-    &.quizzes-theme--active {
+    &.quiz-themes--active {
+      @include is-visible;
       transform: translate(-50%, -50%) scale(1);
     }
 
-    .home-page__quizzes-theme__close-button {
+    .home-page__quiz-themes__close-button {
       @include close-modal-button;
 
       img {
@@ -105,43 +106,83 @@
       }
     }
 
-    .home-page__quizzes-theme__container-list {
+    .home-page__quiz-themes__container-list {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 2rem;
       padding: 1.8rem;
 
-      .home-page__quizzes-theme__container-list__list-item {
-        @include theme($aliceblue-color, none);
-        @include d-flex-center(center, initial, center, 0, 1rem);
+      .home-page__quiz-themes__container-list__list-item {
+        @include theme($selago-color, none);
+        @include d-flex-center(flex-end, column, center, 0, 1rem);
 
         cursor: pointer;
         border-radius: 5px;
+        overflow: hidden;
+
+        position: relative;
 
         width: 16rem;
+        height: 100%;
+
+        &.list-item--checked {
+          pointer-events: none;
+        }
+
+        &:active > img {
+          filter: drop-shadow(0 0.4rem 0.4rem #000);
+          transform: scale(0.9);
+          transition: none;
+        }
+
+        &:not(:hover) {
+          filter: none;
+        }
+
+        .is-theme__situation {
+          display: flex;
+
+          .is-theme__situation__img-unchecked {
+            display: flex;
+            &.is-theme__situation__img-unchecked--active {
+              display: none;
+            }
+          }
+
+          .is-theme__situation__img-checked {
+            display: none;
+            &.is-theme__situation__img-checked--active {
+              display: flex;
+            }
+          }
+
+          .is-theme__situation__img-checked,
+          .is-theme__situation__img-unchecked {
+            width: 4rem;
+          }
+        }
+
+        &:hover .is-theme__situation__img-checked,
+        .is-theme__situation__img-unchecked {
+          @include animate__heartbeat;
+          @include animate__infinite;
+        }
 
         a {
           @include theme(none, $blackcurrant-color);
           @include d-flex-center(center, column, center, 1rem, 0);
           @include set-typography($tertiary-font, 2.6rem, bold, initial, initial);
 
-          img {
+          width: 100%;
+
+          > img {
             filter: drop-shadow(0 0.7rem 0.4rem $shadow-color);
             transform: scale(1);
             transition: 0.6s ease-in-out;
 
             width: 6rem;
+            height: 6rem;
           }
-
-          &:active > img {
-            filter: drop-shadow(0 0.4rem 0.4rem #000);
-            transform: scale(0.9);
-            transition: none;
-          }
-        }
-
-        &:not(:hover) {
-          filter: none;
         }
       }
 

@@ -4,7 +4,7 @@
 
 #header {
   @include d-flex-center(initial, initial, initial, 0, 0.6rem 3.2rem);
-  @include theme($blackcurrant-color, $aliceblue-color);
+  @include theme($blackcurrant-color, none);
 
   width: 100%;
 
@@ -21,12 +21,75 @@
       @include d-flex-center(center, initial, center, 1rem, 0);
 
       .header__container__link-github__text {
-        @include theme(none, $aliceblue-color);
+        @include theme(none, $selago-color);
         @include set-typography($tertiary-font, 1.4rem, initial, initial, initial);
       }
 
       .header__container__link-github__logo {
         width: 4.6rem;
+      }
+    }
+
+    .header__container__back-home-link {
+      @include d-flex-center(center, initial, center, 0, 0);
+
+      pointer-events: none;
+
+      position: relative;
+      right: calc(50% - 6.8rem);
+
+      width: 18rem;
+
+      img {
+        width: 3rem;
+
+        &:hover {
+          filter: drop-shadow(0 0 1rem $chinook-color);
+        }
+      }
+
+      &.back-home-link--active {
+        pointer-events: fill;
+      }
+
+      .back-home-link_toolkit {
+        @include theme($selago-color, $blackcurrant-color);
+
+        pointer-events: none;
+        box-shadow: 0.2rem 1.5rem 4.1rem -0.8rem $shadow-color;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: 0;
+        transform: scale(0);
+        transition: 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+
+        font-size: 1.8rem;
+
+        position: absolute;
+        top: 5rem;
+        padding: 0.6rem;
+
+        width: fit-content;
+
+        &.back-home-link_toolkit--active {
+          @include is-visible;
+          transform: scale(1);
+        }
+
+        &::before {
+          @include theme($selago-color, $blackcurrant-color);
+          border-radius: 0.2rem;
+
+          content: '';
+
+          position: absolute;
+          bottom: 2.7rem;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+
+          width: 1.6rem;
+          height: 1.6rem;
+        }
       }
     }
 
@@ -36,8 +99,8 @@
       position: relative;
       right: calc(50% - 9.2rem);
 
-      .header__container__quiz-logo-container__open-quiz-button {
-        @include d-flex-center(center, initial, center, 0, 0);
+      .header__container__quiz-logo-container__open-quiz-themes-button {
+        @include d-flex-center(initial, initial, center, 0, 0);
 
         position: relative;
 
@@ -60,23 +123,25 @@
           }
         }
 
-        .header__container__quiz-logo-container__open-quiz-button__interrogation {
+        .header__container__quiz-logo-container__open-quiz-themes-button__interrogation {
           @include theme(none, $chinook-color);
           @include set-typography($tertiary-font, 4rem, bold, initial, initial);
 
-          &.open-quiz-button__interrogation--active {
-            color: $aliceblue-color;
+          &.interrogation--active {
+            color: $selago-color;
           }
         }
       }
 
       .header__container__quiz-logo-container__text {
-        @include theme(none, $aliceblue-color);
+        @include theme(none, $selago-color);
         @include set-typography($primary-font, 2.8rem, initial, initial, initial);
 
         .header__container__quiz-logo-container__text__interrogation {
           @include theme(none, $chinook-color);
           @include set-typography($tertiary-font, 3.8rem, bold, initial, initial);
+
+          display: inline-block;
         }
       }
     }
